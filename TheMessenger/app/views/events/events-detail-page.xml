@@ -1,0 +1,28 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+        cssFile="~/views/articles/articles-detail-page.css"
+        loaded="pageLoaded"
+        navigatedTo="pageNavigatedTo">
+
+    <Page.actionBar>
+        <ActionBar title="Event Detail" class="action-bar">
+            <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+
+    <!--<GridLayout rows="auto, auto, auto, *">
+    
+      <Label row="0" class="detailTitle" textWrap="true" text="{{ PostDate }}" />  
+      <HtmlView row="1" class="detailTitle" textWrap="true" html="{{ Title }}" />
+      <Button row="1" text="Register" />
+      <WebView row="3" src="{{ EventContent }}" class="detailContent" textWrap="true"/>
+      
+    </GridLayout>-->
+    <GridLayout rows="auto, auto, *, auto">
+    
+        <Label row="0" class="detailTitle" textWrap="true" text="{{ Title }}" />
+        <Label row="1" class="detailDateTitle" textWrap="true" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}" />
+        <WebView row="2" src="{{ EventContent }}" class="detailContent" textWrap="true"/>
+        <Button row="3" text="Register" />
+    </GridLayout>
+</Page>
+

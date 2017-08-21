@@ -1,0 +1,38 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    loaded="onPageLoaded" 
+    xmlns:df="nativescript-telerik-ui-pro/dataform"
+    cssFile="~/views/login/login-view-page.css">
+
+    <Page.actionBar>
+        <ActionBar title="Login" class="action-bar">
+            <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+    
+    <GridLayout rows="auto, auto, auto, auto, auto">
+        <Image row="0" class="logo" src="~/images/messenger_splash.png" width="278" height="100" />
+        <df:RadDataForm row="1" height="130" id="myDataForm" source="{{ userlogin }}" class="login-form" >
+            <df:RadDataForm.properties>
+                <df:EntityProperty name="email" displayName="E-Mail" index="1" hintText="E-mail">
+                    <df:EntityProperty.editor>
+                        <df:PropertyEditor type="Email" />
+                    </df:EntityProperty.editor>
+                </df:EntityProperty>
+                <df:EntityProperty name="password" index="2" hintText="Password">
+                    <df:EntityProperty.editor> 
+                        <df:PropertyEditor type="Password" />
+                    </df:EntityProperty.editor>
+                </df:EntityProperty>  
+            </df:RadDataForm.properties>
+        </df:RadDataForm>
+        
+        <Button row="2" text="Login" class="btn-primary" tap="{{ login }}" />
+        
+        <Label row="3" text="Dont have an account yet ? Click on register fully experiance TheMessenger" class="reg-label"/>
+        
+        <Button row="4" text="Register" class="btn" tap="onRegisterTap" />
+        
+    </GridLayout>
+        
+       
+</Page>

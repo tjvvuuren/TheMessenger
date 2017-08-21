@@ -1,0 +1,48 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    loaded="pageLoaded" 
+    xmlns:lv="nativescript-telerik-ui-pro/listview"
+    xmlns:nsDrawer="nativescript-telerik-ui-pro/sidedrawer"
+    xmlns:shared="shared"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="false">
+    
+    <Page.actionBar>
+        <ActionBar title="Contact Centre" class="action-bar">
+            <android>
+                <NavigationButton android.systemIcon="ic_menu_moreoverflow" tap="{{ toggleDrawerState }}" />
+            </android>
+            <ios>
+                <NavigationButton visibility="collapsed"/>
+                <ActionItem icon="res://ic_menu" ios.position="left" tap="{{ toggleDrawerState }}" />
+            </ios>
+        </ActionBar>
+    </Page.actionBar>
+
+    <nsDrawer:RadSideDrawer id="sideDrawer">
+        <nsDrawer:RadSideDrawer.drawerContent>
+            <shared:drawer />
+        </nsDrawer:RadSideDrawer.drawerContent>
+
+        <nsDrawer:RadSideDrawer.mainContent>
+        <TabView>
+        <TabView.items>
+          <TabViewItem title="Click to Call">
+            <TabViewItem.view>
+              <Label text="Label in Tab1" />
+            </TabViewItem.view>
+          </TabViewItem>
+          <TabViewItem title="Contact Me">
+            <TabViewItem.view>
+              <Label text="Label in Tab2" />
+            </TabViewItem.view>
+          </TabViewItem>
+          <TabViewItem title="Feedback">
+            <TabViewItem.view>
+              <Label text="Label in Tab3" />
+            </TabViewItem.view>
+          </TabViewItem>
+        </TabView.items>
+      </TabView>
+        </nsDrawer:RadSideDrawer.mainContent>
+    </nsDrawer:RadSideDrawer>
+</Page>

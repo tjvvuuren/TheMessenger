@@ -1,0 +1,17 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    loaded="pageLoaded" 
+    cssFile="~/shared/element-host.css"
+    xmlns:lv="nativescript-telerik-ui-pro/listview"
+    xmlns:nsDrawer="nativescript-telerik-ui-pro/sidedrawer"
+    xmlns:shared="shared"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="false">
+    
+    <Page.actionBar>
+        <ActionBar title="{{ PageTitle }}" class="sport-action-bar">
+            <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+    <shared:element-host />
+    
+</Page>

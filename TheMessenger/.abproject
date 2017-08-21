@@ -1,11 +1,11 @@
 {
   "ProjectName": "TheMessenger",
-  "ProjectGuid": "f0677c5e-8fd1-4dc5-8c79-3a3691edfb9e",
+  "ProjectGuid": "2fac4d33-c401-4a98-bb4b-f92574a39a95",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.TheMessenger",
+  "AppIdentifier": "com.leapfrog.global.TheMessenger",
   "DisplayName": "TheMessenger",
-  "Author": "",
-  "Description": "TheMessenger",
+  "Author": "Leapfrog GLobal",
+  "Description": "The Messenger - a GLOBAL first by LEAPFROG",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [

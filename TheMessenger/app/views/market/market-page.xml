@@ -1,0 +1,181 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    loaded="pageLoaded" 
+    xmlns:lv="nativescript-telerik-ui-pro/listview"
+    xmlns:nsDrawer="nativescript-telerik-ui-pro/sidedrawer"
+    xmlns:shared="shared"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="false">
+    
+    <Page.actionBar>
+        <ActionBar title="Market" class="action-bar">
+            <android>
+                <NavigationButton android.systemIcon="ic_menu_moreoverflow" tap="{{ toggleDrawerState }}" />
+            </android>
+            <ios>
+                <NavigationButton visibility="collapsed"/>
+                <ActionItem icon="res://ic_menu" ios.position="left" tap="{{ toggleDrawerState }}" />
+            </ios>
+        </ActionBar>
+    </Page.actionBar>
+
+    <nsDrawer:RadSideDrawer id="sideDrawer">
+        <nsDrawer:RadSideDrawer.drawerContent>
+            <shared:drawer />
+        </nsDrawer:RadSideDrawer.drawerContent>
+
+        <nsDrawer:RadSideDrawer.mainContent>
+        
+        <TabView>
+        <TabView.items>
+          <TabViewItem title="Classifieds">
+            <TabViewItem.view>
+            
+              <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="top">
+                    <WrapLayout padding="5" horizontalAlignment="center" verticalAlignment="top">
+            
+            <Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf275;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Jobs"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+            <Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf277;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Obituaries"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+            
+                </WrapLayout>
+              </StackLayout>
+            </TabViewItem.view>
+          </TabViewItem>
+          <TabViewItem title="Affinity Partners">
+            <TabViewItem.view>
+              <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="top">
+                    <WrapLayout padding="5" horizontalAlignment="center" verticalAlignment="top">
+
+
+ <Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf236;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Accomodation"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+
+<Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf02d;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Books"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+ <Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf145;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Concerts"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+
+                  <Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf219;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Lifestyle"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+            <Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf283;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Retail"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+
+                  <Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf000;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Social Events"  class="img-button-text" fontSize="12" textWrap="false"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+<Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf1d8;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Travel"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button> 
+                  <Button class="font-icon-btn" textWrap="true">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf1b9;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Vehicles"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button> 
+
+                </WrapLayout>
+              </StackLayout>
+
+            </TabViewItem.view>
+          </TabViewItem>
+        </TabView.items>
+      </TabView>
+
+        </nsDrawer:RadSideDrawer.mainContent>
+    </nsDrawer:RadSideDrawer>
+</Page>

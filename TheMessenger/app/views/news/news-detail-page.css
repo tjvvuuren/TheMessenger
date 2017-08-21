@@ -1,0 +1,158 @@
+ActionBar {
+    color: #ffffff;
+}
+
+ActionBar {
+    background-color: #0087bf;
+}
+.action-bar {
+    color: #ffffff;
+}
+
+.action-bar {
+    background-color: #0087bf;
+}
+
+.sport-action-bar {
+    background-color: #8cc63f;
+}
+.motoring-action-bar {
+    background-color: #f1592a;
+}
+.property-action-bar {
+    background-color: #283891;
+}
+
+@import url('~/views/articles/articles-common.css');
+
+.list-view {
+    animation-name: articlesContentAnimation;
+    animation-duration: 2;
+}
+
+@keyframes articlesContentAnimation {
+    from { transform: translate(0, -700); }
+    to { transform: translate(0, 0); }
+}
+
+.example-title {
+    color: white;
+    font-size: 20;     
+}
+
+.modeSelectedButtonStyle {
+    horizontal-align: center;
+    vertical-align: center;
+    font-size: 15;
+    color: white;
+    padding: 10;
+    background-color: #30BCFF;
+}
+
+.modeButtonStyle{
+    color: #677881;
+    font-size: 15;
+    horizontal-align: center;
+    vertical-align: center;
+    padding: 10;
+    border:0;
+    background-color: #fafeff;
+}
+
+.modeSelectedButtonStackPanelStyle {
+    background-color: #30BCFF;
+}
+.modeButtonStyleStackPanelStyle {
+    background-color: #fafeff;
+}
+
+.seperatorBottomBorder {
+    background-color: #151F2F;
+    height: 1;
+    vertical-align: bottom;
+}
+
+.titleStyle {
+    font-family: "Georgia";
+    font-size: 16;
+    color: #455b66;
+    margin-left: 10;
+    border-bottom: 1 solid lightgray;
+}
+
+.dateStyle {
+    margin-left: 10;
+    width: 110px;
+    overflow: hidden;
+    text-overflow: hidden;
+}
+
+.contentStyle {
+    font-size: 14;
+    color: #677881;
+    margin-top: 4;
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 4;
+}
+
+.blue-button {
+    horizontal-align: center;
+    vertical-align: center;
+    margin: 12 0;    
+} 
+
+.reorder-handle {
+    margin: 16;
+}
+
+.check-box {
+    margin: 8; 
+}
+
+
+.blue-background{
+     background-color: #30BCFF;
+}
+
+.white-background{
+     background-color: white;
+}
+
+.detailTitle {
+    font-family: "Georgia";
+    font-size: 20;
+    font-weight: bold;
+    color: #455b66;
+    margin-left: 10;
+    margin-top: 10;
+    margin-right: 10;
+}
+
+.detailDateTitle {
+    font-family: "Georgia";
+    color: #455b66;
+    font-size: 13;
+    margin-top: 5;
+    margin-left: 10;
+    margin-right: 10;
+    padding: 2;
+}
+.detailContent {
+    font-size: 15;
+    color: #677881;
+    margin-top: 20;
+    margin-left: 10;
+    margin-right: 10;
+}
+.blue-button {
+    horizontal-align: center;
+    vertical-align: center;
+    margin: 12 0;    
+}
+
+.selectedBarItemBottomBorder {
+    background-color: #151F2F;
+    height: 2;
+    vertical-align: bottom;
+}

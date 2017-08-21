@@ -1,0 +1,11 @@
+<DockLayout stretchLastChild="true" class="sidedrawer-dockLayout">
+<StackLayout>
+  <StackLayout class="sidedrawer-header">
+    <Image src="~/images/menu_logo.png" width="63" height="53" tap="{{ navigateToHome }}"  />
+  </StackLayout>
+  <StackLayout class="sidedrawer-content">
+    <Button text="Articles" tap="{{ navigateToArticles }}" class="sidedrawer-list-item-text" />
+    <Button text="Contact Centre" tap="{{navigateToContactCentre}}" class="sidedrawer-list-item-text" />
+  </StackLayout>
+</StackLayout>
+</DockLayout>

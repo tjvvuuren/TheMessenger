@@ -1,0 +1,51 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    navigatingTo="navigatingTo"
+    cssFile="~/views/news/news-page.css"
+    xmlns:lv="nativescript-telerik-ui-pro/listview"
+    xmlns:nsDrawer="nativescript-telerik-ui-pro/sidedrawer"
+    xmlns:shared="shared"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="false">
+    
+    <Page.actionBar>
+        <ActionBar title="{{ PageTitle }}" class="{{ ActionbarCss }}">
+            <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+
+    <GridLayout backgroundColor="white">
+        <ListView class="list-view" items="{{ Newsfeeds }}" itemTap="{{ onItemTap }}">
+            <ListView.itemTemplate>
+                <ios>
+                    <GridLayout columns="*, auto" rows="auto, *" >
+                        <Label col="0" class="titleStyle" textWrap="true" Text="{{  Title }}" />
+                        <Label col="1" class="dateStyle" textWrap="false" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}"/>
+                        <Label row="1" colSpan="3" text="{{ Creator }}" ios.numberOfLines="3" class="contentStyle" textWrap="true"/>
+                    </GridLayout>
+                </ios>
+                <android>
+                    <GridLayout columns="*, auto" rows="auto, *" >
+                        <Label col="0" class="titleStyle" textWrap="true" Text="{{  Title }}" />
+                        <Label col="1" class="dateStyle" textWrap="false" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}"/>
+                        <Label row="1" colSpan="3" text="{{ Creator }}" class="contentStyle" textWrap="true"/>
+                    </GridLayout>
+                </android>
+                <!--
+                <ios>
+                    <GridLayout rows="auto" columns="*, auto" class="itemStyle" >
+                        <Label row="0" col="0" class="titleStyle" textWrap="true" Text="{{  Title }}" />
+                        <Label row="0" col="1"  text="{{ PostDate | dateConverter('DD.MM.YYYY') }}" class="dateStyle" textWrap="false"/>
+                    </GridLayout>
+                </ios>
+                <android>
+                    <GridLayout rows="auto" columns="*, auto" class="itemStyle" >
+                        <Label row="0" col="0" class="titleStyle" textWrap="true" Text="{{  Title }}" />
+                        <Label row="0" col="1" class="dateStyle" textWrap="false"  text="{{ PostDate | dateConverter('DD.MM.YYYY') }}"/>
+                    </GridLayout>
+                </android>-->
+            </ListView.itemTemplate>
+        </ListView>
+        <ActivityIndicator busy="{{ isLoading }}" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+    </GridLayout>
+    
+</Page>

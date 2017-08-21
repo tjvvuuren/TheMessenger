@@ -1,0 +1,20 @@
+<DockLayout stretchLastChild="true" class="sidedrawer-dockLayout">
+<StackLayout>
+  <StackLayout class="sidedrawer-header">
+    <Image src="~/images/menu_logo.png" width="63" height="53" tap="{{ navigateToHome }}"  />
+  </StackLayout>
+  <StackLayout class="sidedrawer-content">
+    <Button text="Notifications" tap="{{navigateToNotifications}}"  class="sidedrawer-list-item-text" />
+    <Button text="My Profile" tap="{{navigateToProfile}}" class="sidedrawer-list-item-text" />
+    <Button text="Articles" tap="{{ navigateToArticles }}" class="sidedrawer-list-item-text" />
+
+    <Button text="Lifestyle" tap="{{navigateToLifestyle}}" class="sidedrawer-list-item-text" />
+    <Button text="Voices" tap="{{navigateToVoices}}" class="sidedrawer-list-item-text" />
+    <Button text="Events" tap="{{navigateToEvents}}" class="sidedrawer-list-item-text" />
+    <Button text="Opportunities" tap="{{navigateToOppertunities}}" class="sidedrawer-list-item-text" />
+    <Button text="Market" tap="{{navigateToMarket}}" class="sidedrawer-list-item-text" />
+    <Button text="Contact Centre" tap="{{navigateToContactCentre}}" class="sidedrawer-list-item-text" />
+    
+  </StackLayout>
+</StackLayout>
+</DockLayout>

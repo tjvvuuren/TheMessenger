@@ -1,0 +1,36 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    loaded="pageLoaded" 
+    cssFile="~/shared/element-host.css"
+    xmlns:lv="nativescript-telerik-ui-pro/listview"
+    xmlns:nsDrawer="nativescript-telerik-ui-pro/sidedrawer"
+    xmlns:shared="shared"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="false">
+    
+    <Page.actionBar>
+        <ActionBar title="Motoring - Classifieds" class="motoring-action-bar">
+            <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+
+    <TabView>
+    <TabView.items>
+      <TabViewItem title="Buy">
+        <TabViewItem.view>
+          <Label text="Label in Tab1" />
+        </TabViewItem.view>
+      </TabViewItem>
+      <TabViewItem title="Rent">
+        <TabViewItem.view>
+          <Label text="Label in Tab2" />
+        </TabViewItem.view>
+      </TabViewItem>
+      <TabViewItem title="Sell">
+        <TabViewItem.view>
+          <Label text="Label in Tab3" />
+        </TabViewItem.view>
+      </TabViewItem>
+    </TabView.items>
+  </TabView>
+    
+</Page>

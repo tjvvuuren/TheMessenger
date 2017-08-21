@@ -1,0 +1,37 @@
+.list-view {
+    animation-name: notificationContentAnimation;
+    animation-duration: 2;
+}
+
+@keyframes notificationContentAnimation {
+    from { transform: translate(0, -700); }
+    to { transform: translate(0, 0); }
+}
+
+.titleStyle {
+    font-family: "Georgia";
+    font-size: 16;
+    font-weight: bold;
+    color: #455b66;
+    margin-left: 10;
+    border-bottom: 1 solid lightgray;
+}
+
+.dateStyle {
+    font-family: "Georgia";
+    font-size: 16;
+    text-align: right;
+    color: #455b66;
+    margin-left: 10;
+    margin-right: 10;
+    border-bottom: 1 solid lightgray;
+}
+
+.contentStyle {
+    font-size: 14;
+    color: #677881;
+    margin-top: 4;
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 4;
+}

@@ -1,0 +1,33 @@
+.img-button-text {
+    width: 80;
+    height: 60;
+    border-radius: 10;
+    margin:7;
+    color: #999999;
+}
+
+.font-icon-btn
+{
+    width: 110;
+    height: 100;
+    color: #999999;
+    text-align: center;
+}
+.font-icon-btn-motoring
+{
+    width: 110;
+    height: 100;
+    color: #f1592a;
+}
+.font-icon-btn-sport
+{
+    width: 110;
+    height: 100;
+    color: #8cc63f;
+}
+.font-icon-btn-property
+{
+    width: 110;
+    height: 100;
+    color: #283891;
+}

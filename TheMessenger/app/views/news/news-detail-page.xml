@@ -1,0 +1,26 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+    navigatingTo="navigatingTo"
+    cssFile="~/views/news/news-detail-page.css"
+    xmlns:lv="nativescript-telerik-ui-pro/listview"
+    xmlns:shared="shared"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="false">
+
+    <Page.actionBar>
+        <ActionBar title="{{ PageTitle }}" class="{{ ActionbarCss }}">
+            <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+    
+    <GridLayout rows="auto, auto, auto, *">
+    
+        <Label row="0" class="detailTitle" textWrap="true" text="{{ Title }}" />
+        <Label row="1" class="detailDateTitle" textWrap="true" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}" />
+        <Label row="2" class="detailDateTitle" textWrap="true" text="{{ Creator }}" />  
+        <WebView row="3" src="{{ NewsContent }}" class="detailContent" textWrap="true"/>
+      
+    </GridLayout>
+    
+    
+</Page>
+
