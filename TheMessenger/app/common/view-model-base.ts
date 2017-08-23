@@ -105,7 +105,7 @@ export class ViewModelBase extends observableModule.Observable {
     }
 
     navigateToHome(args) {
-	    console.log("navigatingToHome");
+	    //console.log("navigatingToHome");
 	    navigator.navigateToHome();
     }
 
@@ -129,9 +129,9 @@ export class ViewModelBase extends observableModule.Observable {
 	    navigator.navigatingToLifestyle();
     }
 
-    navigateToVoices(args) {
+    navigatingToVoicesMain(args) {
 	    //console.log("navigatingToHome");
-	    navigator.navigatingToVoices();
+	    navigator.navigatingToVoicesMain();
     }
 
     navigateToEvents(args) {
@@ -176,7 +176,7 @@ var dateConverter = function(value, format) {
     var a = new Date(value).getTime(),
     b = Date.now(),// new Date(date2).getTime(),
     diff = {};
-    console.log(new Date(value));
+    //console.log(new Date(value));
 
     diff.milliseconds = a > b ? a % b : b % a;
     diff.seconds = diff.milliseconds / 1000;
@@ -227,7 +227,7 @@ var dateConverter = function(value, format) {
         //.getMonth();
         if(result > 4)
         {
-            console.log("SHOW DATE");
+            //console.log("SHOW DATE");
             var intMonth = new Date(value).getMonth();
             var strMonth = shortmonths[intMonth-1];
             var intDay = new Date(value).getDate();

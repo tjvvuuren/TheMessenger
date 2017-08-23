@@ -46,6 +46,22 @@
                 <ScrollView row="1">
                     <ListView class="list-view" id="lstArticles" items="{{ Articles }}" itemTap="{{ onItemTap }}">
                         <ListView.itemTemplate>
+                            <!--<ios>
+                                <GridLayout columns="auto, *, auto" rows="auto, *" >
+                                    <Image col="0" class="imgList" src="{{ MediaUrl }}" />
+                                    <Label col="1" class="titleStyle" textWrap="true" Text="{{  Title }}" />
+                                    <Label row="1" col="0" class="dateStyle" textWrap="false" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}"/>
+                                    <Label row="1" col="1" text="{{ Creator }}" ios.numberOfLines="3" class="contentStyle" textWrap="true"/>
+                                </GridLayout>
+                            </ios>
+                            <android>
+                                <GridLayout columns="auto, *, auto" rows="auto, *" >
+                                    <Image col="0" class="imgList" src="{{ MediaUrl }}" />
+                                    <Label col="1" class="titleStyle" textWrap="true" Text="{{  Title }}" />
+                                    <Label row="1" col="0" class="dateStyle" textWrap="false" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}"/>
+                                    <Label row="1" col="1" text="{{ Creator }}" class="contentStyle" textWrap="true"/>
+                                </GridLayout>
+                            </android>-->
                             <ios>
                                 <GridLayout columns="*, auto" rows="auto, *" >
                                     <Label col="0" class="titleStyle" textWrap="true" Text="{{  Title }}" />

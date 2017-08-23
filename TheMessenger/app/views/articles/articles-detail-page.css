@@ -15,7 +15,13 @@
     margin-top: 10;
     margin-right: 10;
 }
-
+.imgDetail {
+    width:120px;
+    margin-left: 10;
+    margin-top: 10;
+    margin-right: 10;
+    padding: 2;
+}
 .detailDateTitle {
     font-family: "Georgia";
     color: #455b66;

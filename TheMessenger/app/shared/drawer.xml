@@ -9,7 +9,7 @@
     <Button text="Articles" tap="{{ navigateToArticles }}" class="sidedrawer-list-item-text" />
 
     <Button text="Lifestyle" tap="{{navigateToLifestyle}}" class="sidedrawer-list-item-text" />
-    <Button text="Voices" tap="{{navigateToVoices}}" class="sidedrawer-list-item-text" />
+    <Button text="Voices" tap="{{navigatingToVoicesMain}}" class="sidedrawer-list-item-text" />
     <Button text="Events" tap="{{navigateToEvents}}" class="sidedrawer-list-item-text" />
     <Button text="Opportunities" tap="{{navigateToOppertunities}}" class="sidedrawer-list-item-text" />
     <Button text="Market" tap="{{navigateToMarket}}" class="sidedrawer-list-item-text" />

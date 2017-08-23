@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var frame = require("ui/frame");
 var platform = require("platform");
 var isIOS = platform.device.os === platform.platformNames.ios;
@@ -38,7 +37,6 @@ function navigatingToNotifications(args) {
             animated: true,
             moduleName: traceNavigateTo("views/notifications/notifications-page"),
             context: null //new viewNotificationsViewModel.NotificationsViewModel()
-            //context: new viewNotificationsViewModel.NotificationsViewModel()
         });
     }
 }
@@ -48,7 +46,7 @@ function navigatingToArticles() {
     if (topmost.currentEntry.moduleName !== "views/articles/articles-page-list") {
         frame.topmost().navigate({
             animated: true,
-            moduleName: "views/articles/articles-page-list",
+            moduleName: traceNavigateTo("views/articles/articles-page-list"),
             context: null
         });
     }
@@ -98,17 +96,17 @@ function navigatingToOppertunities() {
     }
 }
 exports.navigatingToOppertunities = navigatingToOppertunities;
-function navigatingToVoices() {
+function navigatingToVoicesMain() {
     var topmost = frame.topmost();
-    if (topmost.currentEntry.moduleName !== "views/voices/voices-page") {
+    if (topmost.currentEntry.moduleName !== "views/voices-main/voices-page") {
         frame.topmost().navigate({
             animated: true,
-            moduleName: traceNavigateTo("views/voices/voices-page"),
+            moduleName: traceNavigateTo("views/voices-main/voices-page"),
             context: null
         });
     }
 }
-exports.navigatingToVoices = navigatingToVoices;
+exports.navigatingToVoicesMain = navigatingToVoicesMain;
 function navigatingToContactCentre() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/contactcentre/contactcentre-page") {

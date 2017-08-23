@@ -8,6 +8,8 @@ var ARTICLES = "Articles";
 var NOTIFICATIONS = "Notification";
 var EVENTS = "Events";
 var NEWSFEED = "NewsFeeds";
+var MOTORINGARTICLES = "MotoringArticles";
+var POSTCATEGORIES = "PostCategories";
 var Service = (function () {
     function Service() {
         this._everlive = new everliveModule({ apiKey: constantsModule.telerikApiKey });
@@ -42,7 +44,7 @@ var Service = (function () {
             var query = new everliveModule.Query();
             query.orderDesc("PostDate");
             query.where().eq('Category', 'Joe');
-            query.take(10);
+            query.take(20);
             var everlive = _this.createEverlive();
             everlive.data(ARTICLES).get(query).then(function (data) {
                 resolve(data.result);
@@ -57,7 +59,7 @@ var Service = (function () {
             var query = new everliveModule.Query();
             query.orderDesc("PostDate");
             query.where().eq('Category', category);
-            query.take(10);
+            query.take(20);
             var everlive = _this.createEverlive();
             everlive.data(ARTICLES).get(query).then(function (data) {
                 resolve(data.result);
@@ -66,20 +68,84 @@ var Service = (function () {
             });
         });
     };
-    Service.prototype.getNewsFeedsByCategory = function (category) {
+    Service.prototype.getCategoriesByArea = function (area) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var query = new everliveModule.Query();
+            query.where().eq('PostArea', area);
+            var everlive = _this.createEverlive();
+            everlive.data(POSTCATEGORIES).get(query).then(function (data) {
+                resolve(data.result);
+            }, function (error) {
+                Service.showErrorAndReject(error, reject);
+            });
+        });
+    };
+    Service.prototype.getMotoringArticlesByCaterory = function (category) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var query = new everliveModule.Query();
             query.orderDesc("PostDate");
             //console.log(category);
             query.where().eq('Category', category);
-            query.take(10);
+            query.take(20);
             var everlive = _this.createEverlive();
-            everlive.data(NEWSFEED).get(query).then(function (data) {
+            everlive.data(MOTORINGARTICLES).get(query).then(function (data) {
                 resolve(data.result);
             }, function (error) {
                 Service.showErrorAndReject(error, reject);
             });
+        });
+    };
+    Service.prototype.getNewsFeedsByCategoryAndPostArea = function (category, postarea) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            //console.log(category);
+            query.take(20);
+            var everlive = _this.createEverlive();
+            if (category == "MOTORING") {
+                query.where().eq('Category', postarea);
+                everlive.data(MOTORINGARTICLES).get(query).then(function (data) {
+                    resolve(data.result);
+                }, function (error) {
+                    Service.showErrorAndReject(error, reject);
+                });
+            }
+            else {
+                query.where().eq('Category', category);
+                everlive.data(NEWSFEED).get(query).then(function (data) {
+                    resolve(data.result);
+                }, function (error) {
+                    Service.showErrorAndReject(error, reject);
+                });
+            }
+        });
+    };
+    Service.prototype.getNewsFeedsByCategory = function (category) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            //console.log(category);
+            query.take(20);
+            var everlive = _this.createEverlive();
+            if (category == "MOTORING") {
+                everlive.data(MOTORINGARTICLES).get(query).then(function (data) {
+                    resolve(data.result);
+                }, function (error) {
+                    Service.showErrorAndReject(error, reject);
+                });
+            }
+            else {
+                query.where().eq('Category', category);
+                everlive.data(NEWSFEED).get(query).then(function (data) {
+                    resolve(data.result);
+                }, function (error) {
+                    Service.showErrorAndReject(error, reject);
+                });
+            }
         });
     };
     Service.prototype.getNewsFeeds = function () {

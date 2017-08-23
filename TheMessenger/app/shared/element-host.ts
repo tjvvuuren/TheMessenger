@@ -91,7 +91,7 @@ exports.navigatingToBookReviews= function() {
         }
     }
     
-exports.navigatingToArt= function() {
+    exports.navigatingToArt= function() {
         var topmost = frame.topmost();
         if (topmost.currentEntry.moduleName !== "views/art/art-page") {
             frame.topmost().navigate({
@@ -101,7 +101,8 @@ exports.navigatingToArt= function() {
             });
         }
     }
-exports.navigatingToSports= function() {
+
+    exports.navigatingToSports= function() {
         var topmost = frame.topmost();
         if (topmost.currentEntry.moduleName !== "views/sport/sport-page") {
             frame.topmost().navigate({
@@ -111,7 +112,8 @@ exports.navigatingToSports= function() {
             });
         }
     }
-exports.navigatingToProperty= function() {
+
+    exports.navigatingToProperty= function() {
         var topmost = frame.topmost();
         if (topmost.currentEntry.moduleName !== "views/property/property-page") {
             frame.topmost().navigate({
@@ -122,7 +124,7 @@ exports.navigatingToProperty= function() {
         }
     }
 
-exports.navigatingToMotoring= function() {
+    exports.navigatingToMotoring= function() {
         var topmost = frame.topmost();
         if (topmost.currentEntry.moduleName !== "views/motoring/motoring-page") {
             frame.topmost().navigate({
@@ -133,7 +135,7 @@ exports.navigatingToMotoring= function() {
         }
     }
 
-exports.navigatingToClassifieds= function() {
+    exports.navigatingToClassifieds= function() {
         var topmost = frame.topmost();
         if (topmost.currentEntry.moduleName !== "views/motoring/motoring-classifieds-page") {
             frame.topmost().navigate({
@@ -148,96 +150,318 @@ exports.navigatingToClassifieds= function() {
         return this.charAt(0).toUpperCase() + this.slice(1);
     }
 
-exports.navigatingToNews= function() {
-    var topmost = frame.topmost();
-    
-    var str = topmost.currentEntry.moduleName;
-    var res = str.split("/");
 
-    var strPageTitle = "";
-    strPageTitle = res[1];
-    var fromArea = "";
-    fromArea = res[1];
 
-    if(strPageTitle.capitalize() == "FOODANDWINE")
-    {
-        fromArea = "FOOD &AMP; WINE";
-        strPageTitle = "Food and Wine - News";
-    }else if(strPageTitle.capitalize() == "BOOKREVIEWS")
-    {
-        fromArea = "BOOK REVIEWS";
-        strPageTitle = "Book Reviews - News";
-    }else
-    {
-        strPageTitle = strPageTitle.capitalize()  + " - News";
+    exports.navigatingToNews= function() {
+        var topmost = frame.topmost();
+        
+        var str = topmost.currentEntry.moduleName;
+        var res = str.split("/");
+
+        var strPageTitle = "";
+        strPageTitle = res[1];
+        var fromArea = "";
+        fromArea = res[1];
+
+        if(strPageTitle.capitalize() == "FOODANDWINE")
+        {
+            fromArea = "FOOD &AMP; WINE";
+            strPageTitle = "Food and Wine - News";
+        }else if(strPageTitle.capitalize() == "BOOKREVIEWS")
+        {
+            fromArea = "BOOK REVIEWS";
+            strPageTitle = "Book Reviews - News";
+        }else
+        {
+            strPageTitle = strPageTitle.capitalize()  + " - News";
+            fromArea = fromArea.toUpperCase();
+        }
+
+        var strPageCss = "";
+        strPageCss = res[1];
+        strPageCss = strPageCss  + "-action-bar";
+
+        var navContext;
+        navContext = {
+                        actionbarCss: strPageCss,
+                        pageTitle: strPageTitle,
+                        fromArea: fromArea
+                    };
+
+        if (topmost.currentEntry.moduleName !== "views/news/news-page") {
+            console.log("before navigate");
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/news/news-page",
+                context: navContext
+            });
+        }
+    }
+
+    exports.navigatingToReviews= function() {
+        var topmost = frame.topmost();
+        
+        var str = topmost.currentEntry.moduleName;
+        var res = str.split("/");
+
+        var strPageTitle = "";
+        strPageTitle = res[1];
+        var fromArea = "";
+        fromArea = res[1];
+
+        if(strPageTitle.capitalize() == "CARS &AMP; COFFEE")
+        {
+            fromArea = "CARS &AMP; COFFEE";
+            strPageTitle = "Cars and Coffee - Reviews";
+        }else
+        {
+            strPageTitle = strPageTitle.capitalize()  + " - Reviews";
+            fromArea = fromArea.toUpperCase();
+        }
+
+        var strPageCss = "";
+        strPageCss = res[1];
+        strPageCss = strPageCss  + "-action-bar";
+
+        var navContext;
+        navContext = {
+                        actionbarCss: strPageCss,
+                        pageTitle: strPageTitle,
+                        fromArea: fromArea
+                    };
+
+        if (topmost.currentEntry.moduleName !== "views/reviews/reviews-page") {
+            console.log("before navigate");
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/reviews/reviews-page",
+                context: navContext
+            });
+        }
+    }
+
+    exports.navigatingToInnovation= function() {
+        var topmost = frame.topmost();
+        
+        var str = topmost.currentEntry.moduleName;
+        var res = str.split("/");
+
+        var strPageTitle = "";
+        strPageTitle = res[1];
+        var fromArea = "";
+        fromArea = res[1];
+
+        strPageTitle = strPageTitle.capitalize()  + " - Innovation";
         fromArea = fromArea.toUpperCase();
+
+        var strPageCss = "";
+        strPageCss = res[1];
+        strPageCss = strPageCss  + "-action-bar";
+
+        var navContext;
+        navContext = {
+                        actionbarCss: strPageCss,
+                        pageTitle: strPageTitle,
+                        fromArea: fromArea
+                    };
+
+        if (topmost.currentEntry.moduleName !== "views/innovation/innovation-page") {
+            console.log("before navigate");
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/innovation/innovation-page",
+                context: navContext
+            });
+        }
     }
 
-    var strPageCss = "";
-    strPageCss = res[1];
-    strPageCss = strPageCss  + "-action-bar";
+    exports.navigatingToSupercars= function() {
+        var topmost = frame.topmost();
+        
+        var str = topmost.currentEntry.moduleName;
+        var res = str.split("/");
 
-    var navContext;
-    navContext = {
-                    actionbarCss: strPageCss,
-                    pageTitle: strPageTitle,
-                    fromArea: fromArea
-                };
+        var strPageTitle = "";
+        strPageTitle = res[1];
+        var fromArea = "";
+        fromArea = res[1];
 
-    if (topmost.currentEntry.moduleName !== "views/news/news-page") {
-        console.log("before navigate");
-        frame.topmost().navigate({
-            animated: true,
-            moduleName: "views/news/news-page",
-            context: navContext
-        });
-    }
-}
-exports.navigatingToClassified= function() {
-    var topmost = frame.topmost();
-    
-    var str = topmost.currentEntry.moduleName;
-    var res = str.split("/");
-
-    var strPageTitle = "";
-    strPageTitle = res[1];
-    var fromArea = "";
-    fromArea = res[1];
-
-    if(strPageTitle.capitalize() == "FOODANDWINE")
-    {
-        fromArea = "FOOD &AMP; WINE";
-        strPageTitle = "Food and Wine - Classifieds";
-    }else if(strPageTitle.capitalize() == "BOOKREVIEWS")
-    {
-        fromArea = "BOOK REVIEWS";
-        strPageTitle = "Book Reviews - Classifieds";
-    }else
-    {
-        strPageTitle = strPageTitle.capitalize()  + " - Classifieds";
+        strPageTitle = strPageTitle.capitalize()  + " - Supercars";
         fromArea = fromArea.toUpperCase();
+
+        var strPageCss = "";
+        strPageCss = res[1];
+        strPageCss = strPageCss  + "-action-bar";
+
+        var navContext;
+        navContext = {
+                        actionbarCss: strPageCss,
+                        pageTitle: strPageTitle,
+                        fromArea: fromArea
+                    };
+
+        if (topmost.currentEntry.moduleName !== "views/supercars/supercars-page") {
+            console.log("before navigate");
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/supercars/supercars-page",
+                context: navContext
+            });
+        }
+    }
+    
+    exports.navigatingToClassics= function() {
+        var topmost = frame.topmost();
+        
+        var str = topmost.currentEntry.moduleName;
+        var res = str.split("/");
+
+        var strPageTitle = "";
+        strPageTitle = res[1];
+        var fromArea = "";
+        fromArea = res[1];
+
+        strPageTitle = strPageTitle.capitalize()  + " - Classics";
+        fromArea = fromArea.toUpperCase();
+
+        var strPageCss = "";
+        strPageCss = res[1];
+        strPageCss = strPageCss  + "-action-bar";
+
+        var navContext;
+        navContext = {
+                        actionbarCss: strPageCss,
+                        pageTitle: strPageTitle,
+                        fromArea: fromArea
+                    };
+
+        if (topmost.currentEntry.moduleName !== "views/classics/classics-page") {
+            console.log("before navigate");
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/classics/classics-page",
+                context: navContext
+            });
+        }
+    }
+    
+    exports.navigatingToCarsAndCoffee= function() {
+        var topmost = frame.topmost();
+        
+        var str = topmost.currentEntry.moduleName;
+        var res = str.split("/");
+
+        var strPageTitle = "";
+        strPageTitle = res[1];
+        var fromArea = "";
+        fromArea = res[1];
+
+        strPageTitle = strPageTitle.capitalize()  + " - Cars and Coffee";
+        fromArea = fromArea.toUpperCase();
+
+        var strPageCss = "";
+        strPageCss = res[1];
+        strPageCss = strPageCss  + "-action-bar";
+
+        var navContext;
+        navContext = {
+                        actionbarCss: strPageCss,
+                        pageTitle: strPageTitle,
+                        fromArea: fromArea
+                    };
+
+        if (topmost.currentEntry.moduleName !== "views/carsandcoffee/carsandcoffee-page") {
+            console.log("before navigate");
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/carsandcoffee/carsandcoffee-page",
+                context: navContext
+            });
+        }
+    }
+    
+
+    exports.navigatingToVoices= function() {
+        var topmost = frame.topmost();
+        
+        var str = topmost.currentEntry.moduleName;
+        var res = str.split("/");
+
+        var strPageTitle = "";
+        strPageTitle = res[1];
+        var fromArea = "";
+        fromArea = res[1];
+
+        strPageTitle = strPageTitle.capitalize()  + " - Voices";
+        fromArea = fromArea.toUpperCase();
+
+        var strPageCss = "";
+        strPageCss = res[1];
+        strPageCss = strPageCss  + "-action-bar";
+
+        var navContext;
+        navContext = {
+                        actionbarCss: strPageCss,
+                        pageTitle: strPageTitle,
+                        fromArea: fromArea
+                    };
+
+        if (topmost.currentEntry.moduleName !== "views/voices/voices-page") {
+            console.log("before navigate");
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/voices/voices-page",
+                context: navContext
+            });
+        }
     }
 
-    var strPageCss = "";
-    strPageCss = res[1];
-    strPageCss = strPageCss  + "-action-bar";
+    exports.navigatingToClassified= function() {
+        var topmost = frame.topmost();
+        
+        var str = topmost.currentEntry.moduleName;
+        var res = str.split("/");
 
-    var navContext;
-    navContext = {
-                    actionbarCss: strPageCss,
-                    pageTitle: strPageTitle,
-                    fromArea: fromArea
-                };
+        var strPageTitle = "";
+        strPageTitle = res[1];
+        var fromArea = "";
+        fromArea = res[1];
 
-    if (topmost.currentEntry.moduleName !== "views/classifieds/classifieds-page") {
-        frame.topmost().navigate({
-            animated: true,
-            moduleName: "views/classifieds/classifieds-page",
-            context: navContext
-        });
+        if(strPageTitle.capitalize() == "FOODANDWINE")
+        {
+            fromArea = "FOOD &AMP; WINE";
+            strPageTitle = "Food and Wine - Classifieds";
+        }else if(strPageTitle.capitalize() == "BOOKREVIEWS")
+        {
+            fromArea = "BOOK REVIEWS";
+            strPageTitle = "Book Reviews - Classifieds";
+        }else
+        {
+            strPageTitle = strPageTitle.capitalize()  + " - Classifieds";
+            fromArea = fromArea.toUpperCase();
+        }
+
+        var strPageCss = "";
+        strPageCss = res[1];
+        strPageCss = strPageCss  + "-action-bar";
+
+        var navContext;
+        navContext = {
+                        actionbarCss: strPageCss,
+                        pageTitle: strPageTitle,
+                        fromArea: fromArea
+                    };
+
+        if (topmost.currentEntry.moduleName !== "views/classifieds/classifieds-page") {
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/classifieds/classifieds-page",
+                context: navContext
+            });
+        }
     }
-} 
-exports.navigatingToFandI= function() {
+     
+    exports.navigatingToFandI= function() {
         var topmost = frame.topmost();
         if (topmost.currentEntry.moduleName !== "views/motoring/motoring-FandI-page") {
             frame.topmost().navigate({
@@ -284,13 +508,15 @@ export class ElementHost extends viewModelBaseModule.ViewModelBase
     private _FandI: boolean;
 
     private _Compare: boolean;
-private _Finance: boolean;
-private _FinePrint: boolean;
-private _Insurance: boolean;
-private _Insure: boolean;
+    private _Finance: boolean;
+    private _FinePrint: boolean;
+    private _Insurance: boolean;
+    private _Insure: boolean;
+
+    private _Supercars: boolean;
+    private _CarsAndCoffee: boolean;
+    private _Classics: boolean;
     
-
-
     constructor(pagetitle:string) {
         super();
         this._PageTitle = pagetitle;
@@ -315,8 +541,7 @@ private _Insure: boolean;
         return this._PageTitle;
     }
 
-    private SetButtonDisplayElements()
-    {
+    private SetButtonDisplayElements()    {
         switch(this._PageTitle) {
             case "Lifestyle":
                 this.setLifeStyleButtons();
@@ -420,7 +645,7 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
     }
-                private seBookReviewsButtons()
+    private seBookReviewsButtons()
     {
         this._News = true;
         this._Innovation = true;
@@ -428,7 +653,7 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
     }
-                private setEducationButtons()
+    private setEducationButtons()
     {
         this._News = true;
         this._Innovation = true;
@@ -436,7 +661,7 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
     }
-                private setFashionButtons()
+    private setFashionButtons()
     {
         this._News = true;
         this._Innovation = true;
@@ -444,7 +669,7 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
     }
-                private setFoodAndWineButtons()
+    private setFoodAndWineButtons()
     {
         this._News = true;
         this._Innovation = true;
@@ -452,7 +677,7 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
     }
-                private setHealthButtons()
+    private setHealthButtons()
     {
         this._News = true;
         this._Innovation = true;
@@ -460,7 +685,7 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
     }
-                private setMusicButtons()
+    private setMusicButtons()
     {
         this._News = true;
         this._Innovation = true;
@@ -468,7 +693,7 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
     }
-                private setPartneringButtons()
+    private setPartneringButtons()
     {
         this._News = true;
         this._Innovation = true;
@@ -476,7 +701,7 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
     }
-                private setTravelButtons()
+    private setTravelButtons()
     {
         this._News = true;
         this._Innovation = true;
@@ -492,6 +717,9 @@ private _Insure: boolean;
         this._Voices = true;
         this._Classifieds = true;
         this._FandI = true;
+        this._Supercars = true;
+        this._CarsAndCoffee = true;
+        this._Classics = true;
     }
     private setPropertyButtons()
     {
@@ -778,6 +1006,33 @@ get Insurance(): string {
     }
 get Insure(): string {
         if(this._Insure)
+        {
+            return "visible";
+        }else
+        {
+            return "collapsed";
+        }
+    }
+    get CarsAndCoffee(): string {
+        if(this._CarsAndCoffee)
+        {
+            return "visible";
+        }else
+        {
+            return "collapsed";
+        }
+    }
+    get Classics(): string {
+        if(this._Classics)
+        {
+            return "visible";
+        }else
+        {
+            return "collapsed";
+        }
+    }
+    get Supercars(): string {
+        if(this._Supercars)
         {
             return "visible";
         }else

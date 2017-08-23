@@ -1,16 +1,26 @@
-var dialogsModule = require("ui/dialogs");
-var observableModule = require("data/observable")
-//var ObservableArray = require("data/observable-array").ObservableArray;
-import buttonViewModelModule = require("../../shared/element-host");
-import pageViewModelModule = require("../../view-models/voices-view-model");
-var page;
+import viewModule = require("ui/core/view");
+import viewInnovationViewModel = require("../../view-models/voices-view-model");
+import * as frame from "ui/frame";
 
-import { Observable } from 'data/observable';
-import { ObservableArray } from 'data/observable-array';
-var source = new observableModule.Observable();
-
-exports.pageLoaded = function(args) {
-    page = args.object;
-    var btns = new buttonViewModelModule.ElementHost("Voices");
-    page.bindingContext = btns;
+var viewModel: viewInnovationViewModel.NewsListViewModel;
+export function pageLoaded(args) {
+    var page = args.object;
 }
+
+export function navigatingTo(args) {
+    var page = args.object;
+    var item = args.context;
+    console.log(item.fromArea);
+       
+    viewModel = new viewInnovationViewModel.NewsListViewModel(item.fromArea, "VOICES", item.actionbarCss, item.pageTitle, item.fromArea);
+    
+    page.bindingContext = null;
+    page.bindingContext = viewModel;
+    viewModel.getNewsFeedsByCategoryAndPostArea(item.fromArea, "VOICES");
+    
+}
+
+export function onNavBtnTap() {
+        var topmost = frame.topmost();
+        topmost.goBack();
+    }

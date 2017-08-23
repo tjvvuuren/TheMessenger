@@ -109,7 +109,7 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
     }
     onItemTap(args){
         var index = args.index;
-        console.log(index);
+        //console.log(index);
         this.Article = args.view.bindingContext;
         //console.log("Article List onItemTap CurrentItem: " + this.Article.Title);
         frame_1.topmost().navigate({

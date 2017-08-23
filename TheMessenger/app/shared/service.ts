@@ -9,7 +9,8 @@ var ARTICLES = "Articles";
 var NOTIFICATIONS = "Notification";
 var EVENTS = "Events";
 var NEWSFEED = "NewsFeeds";
-
+var MOTORINGARTICLES = "MotoringArticles";
+var POSTCATEGORIES = "PostCategories";
 export class Service {
     private _everlive: any;
     constructor() {
@@ -47,7 +48,7 @@ export class Service {
             var query = new everliveModule.Query();
             query.orderDesc("PostDate");
             query.where().eq('Category', 'Joe')
-            query.take(10)
+            query.take(20)
             var everlive = this.createEverlive();
             everlive.data(ARTICLES).get(query).then(data => {
                 resolve(<any[]>data.result);
@@ -62,7 +63,7 @@ export class Service {
             var query = new everliveModule.Query();
             query.orderDesc("PostDate");
             query.where().eq('Category', category)
-            query.take(10)
+            query.take(20)
             var everlive = this.createEverlive();
             everlive.data(ARTICLES).get(query).then(data => {
                 resolve(<any[]>data.result);
@@ -72,19 +73,93 @@ export class Service {
         });
     }
 
-    getNewsFeedsByCategory(category: string): Promise<any[]> {
+    getCategoriesByArea(area: string): Promise<any[]> {
+        return new Promise<any[]>((resolve, reject) => {
+            var query = new everliveModule.Query();
+            query.where().eq('PostArea', area)
+            var everlive = this.createEverlive();
+            everlive.data(POSTCATEGORIES).get(query).then(data => {
+                resolve(<any[]>data.result);
+            }, error => {
+                    Service.showErrorAndReject(error, reject);
+                })
+        });
+    }
+    
+    getMotoringArticlesByCaterory(category: string): Promise<any[]> {
         return new Promise<any[]>((resolve, reject) => {
             var query = new everliveModule.Query();
             query.orderDesc("PostDate");
             //console.log(category);
             query.where().eq('Category', category)
-            query.take(10)
+            query.take(20)
             var everlive = this.createEverlive();
-            everlive.data(NEWSFEED).get(query).then(data => {
-                resolve(<any[]>data.result);
+            
+            everlive.data(MOTORINGARTICLES).get(query).then(data => {
+            resolve(<any[]>data.result);
             }, error => {
                     Service.showErrorAndReject(error, reject);
                 })
+        
+        });
+    }
+
+    getNewsFeedsByCategoryAndPostArea(category: string, postarea: string): Promise<any[]> {
+        return new Promise<any[]>((resolve, reject) => {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            //console.log(category);
+            
+            query.take(20)
+            var everlive = this.createEverlive();
+            if(category == "MOTORING")
+            {
+                
+                query.where().eq('Category', postarea)
+                everlive.data(MOTORINGARTICLES).get(query).then(data => {
+                resolve(<any[]>data.result);
+                }, error => {
+                        Service.showErrorAndReject(error, reject);
+                    })
+            }else
+            {
+                query.where().eq('Category', category)
+                everlive.data(NEWSFEED).get(query).then(data => {
+                resolve(<any[]>data.result);
+                }, error => {
+                        Service.showErrorAndReject(error, reject);
+                    })
+            }
+            
+        });
+    }
+
+    getNewsFeedsByCategory(category: string): Promise<any[]> {
+        return new Promise<any[]>((resolve, reject) => {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            //console.log(category);
+            
+            query.take(20)
+            var everlive = this.createEverlive();
+            if(category == "MOTORING")
+            {
+                
+                everlive.data(MOTORINGARTICLES).get(query).then(data => {
+                resolve(<any[]>data.result);
+                }, error => {
+                        Service.showErrorAndReject(error, reject);
+                    })
+            }else
+            {
+                query.where().eq('Category', category)
+                everlive.data(NEWSFEED).get(query).then(data => {
+                resolve(<any[]>data.result);
+                }, error => {
+                        Service.showErrorAndReject(error, reject);
+                    })
+            }
+            
         });
     }
 

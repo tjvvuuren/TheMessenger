@@ -6,7 +6,7 @@ var frame_1 = require("ui/frame");
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var NewsItemData = (function (_super) {
     __extends(NewsItemData, _super);
-    function NewsItemData(id, title, description, content, postdate, category, creator, actionbarcss, pagetitle, fromarea) {
+    function NewsItemData(id, title, description, content, postdate, category, creator, actionbarcss, pagetitle, fromarea, mediaurl) {
         _super.call(this);
         this.Title = title;
         this.NewsContent = content;
@@ -18,6 +18,7 @@ var NewsItemData = (function (_super) {
         this.ActionbarCss = actionbarcss;
         this.PageTitle = pagetitle;
         this.FromArea = fromarea;
+        this.MediaUrl = mediaurl;
     }
     Object.defineProperty(NewsItemData.prototype, "ActionbarCss", {
         get: function () {
@@ -72,17 +73,31 @@ var NewsItemData = (function (_super) {
     return NewsItemData;
 }(observableModule.Observable));
 exports.NewsItemData = NewsItemData;
+var CategoriesData = (function (_super) {
+    __extends(CategoriesData, _super);
+    function CategoriesData(id, postarea, categoryname) {
+        _super.call(this);
+        this.PostArea = postarea;
+        this.CategoryName = categoryname;
+    }
+    return CategoriesData;
+}(observableModule.Observable));
+exports.CategoriesData = CategoriesData;
 var NewsListViewModel = (function (_super) {
     __extends(NewsListViewModel, _super);
-    function NewsListViewModel(mode, actionbarcss, pagetitle, fromarea) {
+    function NewsListViewModel(mode, postarea, actionbarcss, pagetitle, fromarea) {
         _super.call(this);
         this._Mode = mode;
+        this._PostArea = postarea;
         this._actionbarCss = actionbarcss;
         this._pageTitle = pagetitle;
         this._fromArea = fromarea;
-        this.getNewsFeedsForCategory(mode);
-        //console.log("Constructor Properties: (" + this._fromArea + " / " + this._actionbarCss + " / " + this._pageTitle + ")");
-        //console.log("Constructor Parms: (" + fromarea + " / " + actionbarcss + " / " + pagetitle + ")");
+        if (mode == "MOTORING") {
+            this.getNewsFeedsByCategoryAndPostArea(mode, postarea);
+        }
+        else {
+            this.getNewsFeedsForCategory(mode);
+        }
     }
     Object.defineProperty(NewsListViewModel.prototype, "ActionbarCss", {
         get: function () {
@@ -140,6 +155,20 @@ var NewsListViewModel = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(NewsListViewModel.prototype, "PostArea", {
+        get: function () {
+            return this._PostArea;
+        },
+        set: function (value) {
+            //this._Mode = value; 
+            if (this._PostArea != value) {
+                this._PostArea = value;
+                this.notifyPropertyChange("PostArea", value);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(NewsListViewModel.prototype, "Newsfeed", {
         get: function () {
             return this._newsfeed;
@@ -148,6 +177,19 @@ var NewsListViewModel = (function (_super) {
             if (this._newsfeed != value) {
                 this._newsfeed = value;
                 this.notifyPropertyChange("Newsfeed", value);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NewsListViewModel.prototype, "AreaCategories", {
+        get: function () {
+            return this._areaCategories;
+        },
+        set: function (value) {
+            if (this._areaCategories != value) {
+                this._areaCategories = value;
+                this.notifyPropertyChange("AreaCategories", value);
             }
         },
         enumerable: true,
@@ -175,9 +217,41 @@ var NewsListViewModel = (function (_super) {
         //this.Newsfeed.FromArea = this.FromArea;
         console.log("NewsFeed List onItemTap CurrentItem: " + this.Newsfeed.PageTitle);
         frame_1.topmost().navigate({
-            moduleName: "views/news/news-detail-page",
+            moduleName: "views/reviews/reviews-detail-page",
             animated: true,
             context: this.Newsfeed
+        });
+    };
+    NewsListViewModel.prototype.getAreaCategories = function (area) {
+        var _this = this;
+        if (!this.beginLoading())
+            return;
+        serviceModule.service.getCategoriesByArea(area).then(function (data) {
+            var areaCategories = new Array();
+            for (var i = 0; i < data.length; i++) {
+                areaCategories.push(new CategoriesData(i, data[i].PostArea, data[i].CategoryName));
+            }
+            _this.AreaCategories = areaCategories;
+            _this.endLoading();
+        }, function (error) {
+            _this.endLoading();
+        });
+    };
+    NewsListViewModel.prototype.getNewsFeedsByCategoryAndPostArea = function (category, postarea) {
+        var _this = this;
+        if (!this.beginLoading())
+            return;
+        serviceModule.service.getNewsFeedsByCategoryAndPostArea(category, postarea).then(function (data) {
+            var newsfeeds;
+            newsfeeds = new Array();
+            for (var i = 0; i < data.length; i++) {
+                newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent, data[i].PostDate, data[i].Category, data[i].Creator, _this.ActionbarCss, _this.PageTitle, _this.FromArea, data[i].MediaUrl));
+            }
+            _this.Mode = _this._Mode;
+            _this.Newsfeeds = newsfeeds;
+            _this.endLoading();
+        }, function (error) {
+            _this.endLoading();
         });
     };
     NewsListViewModel.prototype.getNewsFeedsForCategory = function (category) {
@@ -187,7 +261,7 @@ var NewsListViewModel = (function (_super) {
         serviceModule.service.getNewsFeedsByCategory(category).then(function (data) {
             var newsfeeds = new Array();
             for (var i = 0; i < data.length; i++) {
-                newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent, data[i].PostDate, data[i].Category, data[i].Creator, _this.ActionbarCss, _this.PageTitle, _this.FromArea));
+                newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent, data[i].PostDate, data[i].Category, data[i].Creator, _this.ActionbarCss, _this.PageTitle, _this.FromArea, data[i].MediaUrl));
             }
             _this.Mode = _this._Mode;
             _this.Newsfeeds = newsfeeds;
@@ -203,7 +277,7 @@ var NewsListViewModel = (function (_super) {
         serviceModule.service.getNewsFeeds().then(function (data) {
             var newsfeeds = new Array();
             for (var i = 0; i < data.length; i++) {
-                newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent, data[i].PostDate, data[i].Category, data[i].Creator, _this.ActionbarCss, _this.PageTitle, _this.FromArea));
+                newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent, data[i].PostDate, data[i].Category, data[i].Creator, _this.ActionbarCss, _this.PageTitle, _this.FromArea, data[i].MediaUrl));
             }
             _this.Mode = _this._Mode;
             _this.Newsfeeds = newsfeeds;

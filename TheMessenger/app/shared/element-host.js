@@ -172,6 +172,180 @@ exports.navigatingToNews = function () {
         });
     }
 };
+exports.navigatingToReviews = function () {
+    var topmost = frame.topmost();
+    var str = topmost.currentEntry.moduleName;
+    var res = str.split("/");
+    var strPageTitle = "";
+    strPageTitle = res[1];
+    var fromArea = "";
+    fromArea = res[1];
+    if (strPageTitle.capitalize() == "CARS &AMP; COFFEE") {
+        fromArea = "CARS &AMP; COFFEE";
+        strPageTitle = "Cars and Coffee - Reviews";
+    }
+    else {
+        strPageTitle = strPageTitle.capitalize() + " - Reviews";
+        fromArea = fromArea.toUpperCase();
+    }
+    var strPageCss = "";
+    strPageCss = res[1];
+    strPageCss = strPageCss + "-action-bar";
+    var navContext;
+    navContext = {
+        actionbarCss: strPageCss,
+        pageTitle: strPageTitle,
+        fromArea: fromArea
+    };
+    if (topmost.currentEntry.moduleName !== "views/reviews/reviews-page") {
+        console.log("before navigate");
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/reviews/reviews-page",
+            context: navContext
+        });
+    }
+};
+exports.navigatingToInnovation = function () {
+    var topmost = frame.topmost();
+    var str = topmost.currentEntry.moduleName;
+    var res = str.split("/");
+    var strPageTitle = "";
+    strPageTitle = res[1];
+    var fromArea = "";
+    fromArea = res[1];
+    strPageTitle = strPageTitle.capitalize() + " - Innovation";
+    fromArea = fromArea.toUpperCase();
+    var strPageCss = "";
+    strPageCss = res[1];
+    strPageCss = strPageCss + "-action-bar";
+    var navContext;
+    navContext = {
+        actionbarCss: strPageCss,
+        pageTitle: strPageTitle,
+        fromArea: fromArea
+    };
+    if (topmost.currentEntry.moduleName !== "views/innovation/innovation-page") {
+        console.log("before navigate");
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/innovation/innovation-page",
+            context: navContext
+        });
+    }
+};
+exports.navigatingToSupercars = function () {
+    var topmost = frame.topmost();
+    var str = topmost.currentEntry.moduleName;
+    var res = str.split("/");
+    var strPageTitle = "";
+    strPageTitle = res[1];
+    var fromArea = "";
+    fromArea = res[1];
+    strPageTitle = strPageTitle.capitalize() + " - Supercars";
+    fromArea = fromArea.toUpperCase();
+    var strPageCss = "";
+    strPageCss = res[1];
+    strPageCss = strPageCss + "-action-bar";
+    var navContext;
+    navContext = {
+        actionbarCss: strPageCss,
+        pageTitle: strPageTitle,
+        fromArea: fromArea
+    };
+    if (topmost.currentEntry.moduleName !== "views/supercars/supercars-page") {
+        console.log("before navigate");
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/supercars/supercars-page",
+            context: navContext
+        });
+    }
+};
+exports.navigatingToClassics = function () {
+    var topmost = frame.topmost();
+    var str = topmost.currentEntry.moduleName;
+    var res = str.split("/");
+    var strPageTitle = "";
+    strPageTitle = res[1];
+    var fromArea = "";
+    fromArea = res[1];
+    strPageTitle = strPageTitle.capitalize() + " - Classics";
+    fromArea = fromArea.toUpperCase();
+    var strPageCss = "";
+    strPageCss = res[1];
+    strPageCss = strPageCss + "-action-bar";
+    var navContext;
+    navContext = {
+        actionbarCss: strPageCss,
+        pageTitle: strPageTitle,
+        fromArea: fromArea
+    };
+    if (topmost.currentEntry.moduleName !== "views/classics/classics-page") {
+        console.log("before navigate");
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/classics/classics-page",
+            context: navContext
+        });
+    }
+};
+exports.navigatingToCarsAndCoffee = function () {
+    var topmost = frame.topmost();
+    var str = topmost.currentEntry.moduleName;
+    var res = str.split("/");
+    var strPageTitle = "";
+    strPageTitle = res[1];
+    var fromArea = "";
+    fromArea = res[1];
+    strPageTitle = strPageTitle.capitalize() + " - Cars and Coffee";
+    fromArea = fromArea.toUpperCase();
+    var strPageCss = "";
+    strPageCss = res[1];
+    strPageCss = strPageCss + "-action-bar";
+    var navContext;
+    navContext = {
+        actionbarCss: strPageCss,
+        pageTitle: strPageTitle,
+        fromArea: fromArea
+    };
+    if (topmost.currentEntry.moduleName !== "views/carsandcoffee/carsandcoffee-page") {
+        console.log("before navigate");
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/carsandcoffee/carsandcoffee-page",
+            context: navContext
+        });
+    }
+};
+exports.navigatingToVoices = function () {
+    var topmost = frame.topmost();
+    var str = topmost.currentEntry.moduleName;
+    var res = str.split("/");
+    var strPageTitle = "";
+    strPageTitle = res[1];
+    var fromArea = "";
+    fromArea = res[1];
+    strPageTitle = strPageTitle.capitalize() + " - Voices";
+    fromArea = fromArea.toUpperCase();
+    var strPageCss = "";
+    strPageCss = res[1];
+    strPageCss = strPageCss + "-action-bar";
+    var navContext;
+    navContext = {
+        actionbarCss: strPageCss,
+        pageTitle: strPageTitle,
+        fromArea: fromArea
+    };
+    if (topmost.currentEntry.moduleName !== "views/voices/voices-page") {
+        console.log("before navigate");
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/voices/voices-page",
+            context: navContext
+        });
+    }
+};
 exports.navigatingToClassified = function () {
     var topmost = frame.topmost();
     var str = topmost.currentEntry.moduleName;
@@ -406,6 +580,9 @@ var ElementHost = (function (_super) {
         this._Voices = true;
         this._Classifieds = true;
         this._FandI = true;
+        this._Supercars = true;
+        this._CarsAndCoffee = true;
+        this._Classics = true;
     };
     ElementHost.prototype.setPropertyButtons = function () {
         this._News = true;
@@ -772,6 +949,42 @@ var ElementHost = (function (_super) {
     Object.defineProperty(ElementHost.prototype, "Insure", {
         get: function () {
             if (this._Insure) {
+                return "visible";
+            }
+            else {
+                return "collapsed";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ElementHost.prototype, "CarsAndCoffee", {
+        get: function () {
+            if (this._CarsAndCoffee) {
+                return "visible";
+            }
+            else {
+                return "collapsed";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ElementHost.prototype, "Classics", {
+        get: function () {
+            if (this._Classics) {
+                return "visible";
+            }
+            else {
+                return "collapsed";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ElementHost.prototype, "Supercars", {
+        get: function () {
+            if (this._Supercars) {
                 return "visible";
             }
             else {

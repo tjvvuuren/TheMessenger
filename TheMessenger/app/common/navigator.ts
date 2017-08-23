@@ -51,7 +51,7 @@ export function navigatingToArticles() {
         frame.topmost().navigate({
             animated: true,
 
-            moduleName: "views/articles/articles-page-list",
+            moduleName: traceNavigateTo("views/articles/articles-page-list"),
             context: null
         });
     }
@@ -96,12 +96,12 @@ export function navigatingToOppertunities() {
         });
     }
 }
-export function navigatingToVoices() {
+export function navigatingToVoicesMain() {
     var topmost = frame.topmost();
-    if (topmost.currentEntry.moduleName !== "views/voices/voices-page") {
+    if (topmost.currentEntry.moduleName !== "views/voices-main/voices-page") {
         frame.topmost().navigate({
             animated: true,
-            moduleName: traceNavigateTo("views/voices/voices-page"),
+            moduleName: traceNavigateTo("views/voices-main/voices-page"),
             context: null
         });
     }

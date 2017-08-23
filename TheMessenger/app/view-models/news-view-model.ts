@@ -15,7 +15,9 @@ export class NewsItemData extends observableModule.Observable {
     public actionbarCss: string;
     public pageTitle: string;
     public fromArea: string;
-    constructor(id: number, title: string, description: string, content: string,  postdate: string, category: string, creator: string,  actionbarcss: string, pagetitle: string, fromarea: string) {
+    public MediaUrl: string;
+
+    constructor(id: number, title: string, description: string, content: string,  postdate: string, category: string, creator: string,  actionbarcss: string, pagetitle: string, fromarea: string, mediaurl: string) {
         super();
         this.Title = title;
         this.NewsContent = content;
@@ -27,6 +29,7 @@ export class NewsItemData extends observableModule.Observable {
         this.ActionbarCss = actionbarcss;
         this.PageTitle = pagetitle;
         this.FromArea = fromarea;
+        this.MediaUrl = mediaurl;
     }
 
     get ActionbarCss(): string
@@ -79,23 +82,41 @@ export class NewsItemData extends observableModule.Observable {
         return date.getDate() + " " + strShortMonth;
     }
 }
-
+export class CategoriesData extends observableModule.Observable {
+    public PostArea: string;
+    public CategoryName: string;
+    
+    constructor(id: number, postarea: string, categoryname: string) {
+        super();
+        this.PostArea = postarea;
+        this.CategoryName = categoryname;
+    
+    }
+}
 export class NewsListViewModel extends viewModelBaseModule.ViewModelBase {
     private _Mode: string;
+    private _PostArea: string;
     private _actionbarCss: string;
     private _pageTitle: string;
     private _fromArea: string;
     private _newsfeeds: Array<NewsItemData>;
+    private _areaCategories: Array<CategoriesData>;
     private _newsfeed: NewsItemData;
-    constructor(mode:string, actionbarcss:string, pagetitle:string, fromarea:string) {
+    constructor(mode:string, postarea:string, actionbarcss:string, pagetitle:string, fromarea:string) {
         super();
         this._Mode = mode;
+        this._PostArea = postarea;
         this._actionbarCss = actionbarcss;
         this._pageTitle = pagetitle;
         this._fromArea = fromarea;
-        this.getNewsFeedsForCategory(mode);
-        //console.log("Constructor Properties: (" + this._fromArea + " / " + this._actionbarCss + " / " + this._pageTitle + ")");
-        //console.log("Constructor Parms: (" + fromarea + " / " + actionbarcss + " / " + pagetitle + ")");
+        if(mode == "MOTORING")
+        {
+            this.getNewsFeedsByCategoryAndPostArea(mode, postarea);
+        }else
+        {
+            this.getNewsFeedsForCategory(mode);
+        }
+        
          
     }
 
@@ -154,6 +175,18 @@ export class NewsListViewModel extends viewModelBaseModule.ViewModelBase {
         }
     }
 
+get PostArea(): string
+    {
+        return this._PostArea;
+    }
+    set PostArea(value: string)
+    {
+        //this._Mode = value; 
+        if (this._PostArea != value) {
+            this._PostArea = value;
+            this.notifyPropertyChange("PostArea", value);
+        }
+    }
     get Newsfeed(): NewsItemData {
         return this._newsfeed;
     }
@@ -161,6 +194,16 @@ export class NewsListViewModel extends viewModelBaseModule.ViewModelBase {
         if (this._newsfeed != value) {
             this._newsfeed = value;
             this.notifyPropertyChange("Newsfeed", value);
+        }
+    }
+
+    get AreaCategories(): Array<CategoriesData> {
+        return this._areaCategories;
+    }
+    set AreaCategories(value: Array<CategoriesData>) {
+        if (this._areaCategories != value) {
+            this._areaCategories = value;
+            this.notifyPropertyChange("AreaCategories", value);
         }
     }
 
@@ -174,8 +217,6 @@ export class NewsListViewModel extends viewModelBaseModule.ViewModelBase {
         }
     }
 
-    
-
     onItemTap(args){
         var index = args.index;
         //console.log(index);
@@ -185,10 +226,41 @@ export class NewsListViewModel extends viewModelBaseModule.ViewModelBase {
         //this.Newsfeed.FromArea = this.FromArea;
         console.log("NewsFeed List onItemTap CurrentItem: " + this.Newsfeed.PageTitle);
         frame_1.topmost().navigate({
-            moduleName: "views/news/news-detail-page",
+            moduleName: "views/reviews/reviews-detail-page",
             animated: true,
             context: this.Newsfeed
         });
+    }
+
+    getAreaCategories(area: string){
+        if (!this.beginLoading())return;
+            serviceModule.service.getCategoriesByArea(area).then((data: any[]) => {
+                var areaCategories = new Array<CategoriesData>();
+                for (var i = 0; i < data.length; i++) {
+                    areaCategories.push(new CategoriesData(i, data[i].PostArea, data[i].CategoryName));
+                }
+                this.AreaCategories = areaCategories;
+                this.endLoading();
+            },(error: any) => {
+                this.endLoading();
+            });
+    }
+
+    getNewsFeedsByCategoryAndPostArea(category: string, postarea: string) {
+        if (!this.beginLoading())return;
+            serviceModule.service.getNewsFeedsByCategoryAndPostArea(category, postarea).then((data: any[]) => {
+                var newsfeeds;
+                newsfeeds = new Array<NewsItemData>();
+
+                for (var i = 0; i < data.length; i++) {
+                    newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent,  data[i].PostDate, data[i].Category, data[i].Creator, this.ActionbarCss, this.PageTitle, this.FromArea, data[i].MediaUrl));
+                }
+                this.Mode = this._Mode;
+                this.Newsfeeds = newsfeeds;
+                this.endLoading();
+            },(error: any) => {
+                this.endLoading();
+            });
     }
 
     getNewsFeedsForCategory(category: string) {
@@ -196,7 +268,7 @@ export class NewsListViewModel extends viewModelBaseModule.ViewModelBase {
             serviceModule.service.getNewsFeedsByCategory(category).then((data: any[]) => {
                 var newsfeeds = new Array<NewsItemData>();
                 for (var i = 0; i < data.length; i++) {
-                    newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent,  data[i].PostDate, data[i].Category, data[i].Creator, this.ActionbarCss, this.PageTitle, this.FromArea));
+                    newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent,  data[i].PostDate, data[i].Category, data[i].Creator, this.ActionbarCss, this.PageTitle, this.FromArea, data[i].MediaUrl));
                 }
                 this.Mode = this._Mode;
                 this.Newsfeeds = newsfeeds;
@@ -211,7 +283,7 @@ export class NewsListViewModel extends viewModelBaseModule.ViewModelBase {
         serviceModule.service.getNewsFeeds().then((data: any[]) => {
             var newsfeeds = new Array<NewsItemData>();
             for (var i = 0; i < data.length; i++) {
-                newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent,  data[i].PostDate, data[i].Category, data[i].Creator, this.ActionbarCss, this.PageTitle, this.FromArea));
+                newsfeeds.push(new NewsItemData(i, data[i].Title, data[i].Description, data[i].NewsContent,  data[i].PostDate, data[i].Category, data[i].Creator, this.ActionbarCss, this.PageTitle, this.FromArea, data[i].MediaUrl));
             }
             this.Mode = this._Mode;
             this.Newsfeeds = newsfeeds;

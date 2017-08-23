@@ -54,7 +54,10 @@
     margin-left: 10;
     border-bottom: 1 solid lightgray;
 }
-
+.imgList {
+    width:70px;
+    padding: 2;
+}
 .dateStyle {
     font-size: 12;
     color: #677881;

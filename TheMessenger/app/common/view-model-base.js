@@ -94,7 +94,7 @@ var ViewModelBase = (function (_super) {
         sideDrawer.drawerTransition = transition;
     };
     ViewModelBase.prototype.navigateToHome = function (args) {
-        console.log("navigatingToHome");
+        //console.log("navigatingToHome");
         navigator.navigateToHome();
     };
     ViewModelBase.prototype.navigateToNotifications = function (args) {
@@ -113,9 +113,9 @@ var ViewModelBase = (function (_super) {
         //console.log("navigatingToHome");
         navigator.navigatingToLifestyle();
     };
-    ViewModelBase.prototype.navigateToVoices = function (args) {
+    ViewModelBase.prototype.navigatingToVoicesMain = function (args) {
         //console.log("navigatingToHome");
-        navigator.navigatingToVoices();
+        navigator.navigatingToVoicesMain();
     };
     ViewModelBase.prototype.navigateToEvents = function (args) {
         //console.log("navigatingToHome");
@@ -149,7 +149,7 @@ var timeDiff = function (date1, date2) {
 var dateConverter = function (value, format) {
     var a = new Date(value).getTime(), b = Date.now(), // new Date(date2).getTime(),
     diff = {};
-    console.log(new Date(value));
+    //console.log(new Date(value));
     diff.milliseconds = a > b ? a % b : b % a;
     diff.seconds = diff.milliseconds / 1000;
     diff.minutes = diff.seconds / 60;
@@ -191,7 +191,7 @@ var dateConverter = function (value, format) {
         }
         //.getMonth();
         if (result > 4) {
-            console.log("SHOW DATE");
+            //console.log("SHOW DATE");
             var intMonth = new Date(value).getMonth();
             var strMonth = shortmonths[intMonth - 1];
             var intDay = new Date(value).getDate();

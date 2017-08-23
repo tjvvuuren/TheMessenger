@@ -18,16 +18,18 @@ function navigatingTo(args) {
         item.fromArea = "BOOK REVIEWS";
         item.pageTitle = "Book Reviews - News";
     }
-    //viewModel = page.navigationContext;
-    //if(viewModel == null)
-    //{   
-    viewModel = new viewNewsViewModel.NewsListViewModel(item.fromArea, item.actionbarCss, item.pageTitle, item.fromArea);
-    //}
-    page.bindingContext = null;
-    page.bindingContext = viewModel;
-    //page.bindingContext = item;
-    viewModel.getNewsFeedsForCategory(item.fromArea);
-    //viewModel.refresh();
+    if (item.fromArea == "MOTORING") {
+        viewModel = new viewNewsViewModel.NewsListViewModel(item.fromArea, "NEWS", item.actionbarCss, item.pageTitle, item.fromArea);
+        page.bindingContext = null;
+        page.bindingContext = viewModel;
+        viewModel.getNewsFeedsByCategoryAndPostArea(item.fromArea, "NEWS");
+    }
+    else {
+        viewModel = new viewNewsViewModel.NewsListViewModel(item.fromArea, "", item.actionbarCss, item.pageTitle, item.fromArea);
+        page.bindingContext = null;
+        page.bindingContext = viewModel;
+        viewModel.getNewsFeedsForCategory(item.fromArea);
+    }
 }
 exports.navigatingTo = navigatingTo;
 function onNavBtnTap() {
