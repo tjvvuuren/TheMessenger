@@ -1,0 +1,19 @@
+<ScrollView class="drawer-content" horizontalAlignment="left">
+    <StackLayout loaded="onLoaded" unloaded="onUnloaded" width="260" horizontalAlignment="left">
+        <Image src="~/images/messenger_splash.png" margin="40 0 24 0" horizontalAlignment="center" stretch="none" />
+
+        <Button text="Home" tap="tapHome" class="drawer-button" />
+        
+        <Button text="Notifications" tap="{{navigateToNotifications}}"  class="drawer-button" />
+        <Button text="My Profile" tap="{{navigateToProfile}}" class="drawer-button" />
+        <Button text="Articles" tap="{{ navigateToArticles }}" class="drawer-button" />
+        <Button text="Lifestyle" tap="{{navigateToLifestyle}}" class="drawer-button" />
+        <Button text="Voices" tap="{{navigatingToVoicesMain}}" class="drawer-button" />
+        <Button text="Events" tap="{{navigateToEvents}}" class="drawer-button" />
+        <Button text="Opportunities" tap="{{navigateToOppertunities}}" class="drawer-button" />
+        <Button text="Market" tap="{{navigateToMarket}}" class="drawer-button" />
+        <Button text="Contact Centre" tap="{{navigateToContactCentre}}" class="drawer-button" />
+
+        <Button text="About" tap="tapAbout" class="drawer-button" />
+    </StackLayout>
+</ScrollView>

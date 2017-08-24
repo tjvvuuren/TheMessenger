@@ -3,6 +3,7 @@ import applicationSettingsModule = require("application-settings");
 import constantsModule = require("./constants");
 import notificationsModule = require("./notifications");
 import userModel = require("../view-models/login-view-model");
+import baseModel = require("../view-models/base-view-model");
 //import * as Everlive from 'everlive-sdk';
 
 var ARTICLES = "Articles";
@@ -11,6 +12,7 @@ var EVENTS = "Events";
 var NEWSFEED = "NewsFeeds";
 var MOTORINGARTICLES = "MotoringArticles";
 var POSTCATEGORIES = "PostCategories";
+var APPLICATIONELEMENTS = "ApplicationElements";
 export class Service {
     private _everlive: any;
     constructor() {
@@ -43,6 +45,19 @@ export class Service {
         }
     }
     
+    getElements(): Promise<any[]> {
+        return new Promise<any[]>((resolve, reject) => {
+            var query = new everliveModule.Query();
+            query.orderDesc("ElementOrder");
+            var everlive = this.createEverlive();
+            everlive.data(APPLICATIONELEMENTS).get(query).then(data => {
+                resolve(<any[]>data.result);
+            }, error => {
+                    Service.showErrorAndReject(error, reject);
+                })
+        });
+    }
+
     getArticles(): Promise<any[]> {
         return new Promise<any[]>((resolve, reject) => {
             var query = new everliveModule.Query();

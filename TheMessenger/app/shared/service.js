@@ -10,6 +10,7 @@ var EVENTS = "Events";
 var NEWSFEED = "NewsFeeds";
 var MOTORINGARTICLES = "MotoringArticles";
 var POSTCATEGORIES = "PostCategories";
+var APPLICATIONELEMENTS = "ApplicationElements";
 var Service = (function () {
     function Service() {
         this._everlive = new everliveModule({ apiKey: constantsModule.telerikApiKey });
@@ -37,6 +38,19 @@ var Service = (function () {
             //this._everlive.offlineStorage.purgeAll();
             this._everlive = null;
         }
+    };
+    Service.prototype.getElements = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var query = new everliveModule.Query();
+            query.orderDesc("ElementOrder");
+            var everlive = _this.createEverlive();
+            everlive.data(APPLICATIONELEMENTS).get(query).then(function (data) {
+                resolve(data.result);
+            }, function (error) {
+                Service.showErrorAndReject(error, reject);
+            });
+        });
     };
     Service.prototype.getArticles = function () {
         var _this = this;
