@@ -23,6 +23,7 @@ function navigatingTo(args) {
         page.bindingContext = null;
         page.bindingContext = viewModel;
         viewModel.getNewsFeedsByCategoryAndPostArea(item.fromArea, "NEWS");
+        ;
     }
     else {
         viewModel = new viewNewsViewModel.NewsListViewModel(item.fromArea, "", item.actionbarCss, item.pageTitle, item.fromArea);

@@ -1,6 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var everlive_sdk_1 = require("everlive-sdk");
+var everlive_sdk_1 = require('everlive-sdk');
 //var Everlive = require('everlive-sdk');
 var BackendService = (function () {
     function BackendService() {
@@ -23,8 +22,6 @@ var BackendService = (function () {
             //this._todoItems.push(new ListItem("See weather forecast for London", true, false));
             //console.log("QUERY COMPLETED");
             for (var i = 0; i < 10; i++) {
-                //this._todoItems.push(new ListItem(data.result[i].Title, false, false));
-                //this._items.push(new ArticleDataItem(data.result[i].Id,data.result[i].Title,data.result[i].ArticleContent));
             }
         }, function (error) {
             console.log(JSON.stringify(error));

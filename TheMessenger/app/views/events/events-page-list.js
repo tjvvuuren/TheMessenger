@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var viewArticlesViewModel = require("../../view-models/events-view-model");
 var viewModel;
 function pageLoaded(args) {

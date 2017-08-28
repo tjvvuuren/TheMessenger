@@ -1,6 +1,5 @@
 //import application = require("application");
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var application_1 = require("application");
 //var Everlive = require('everlive-sdk');
 var everliveModule = require("./lib/everlive.all.min");

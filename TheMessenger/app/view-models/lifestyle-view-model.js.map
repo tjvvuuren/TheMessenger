@@ -1,1 +1,1 @@
-{"version":3,"file":"lifestyle-view-model.js","sourceRoot":"","sources":["lifestyle-view-model.ts"],"names":[],"mappings":";;AAEA,+DAAkE;AAGlE;IAAwC,sCAAiC;IACrE;eACI,iBAAO;IACX,CAAC;IAEL,yBAAC;AAAD,CAAC,AALD,CAAwC,mBAAmB,CAAC,aAAa,GAKxE;AALY,gDAAkB"}
+{"version":3,"file":"lifestyle-view-model.js","sourceRoot":"","sources":["lifestyle-view-model.ts"],"names":[],"mappings":";AAEA,IAAO,mBAAmB,WAAW,2BAA2B,CAAC,CAAC;AAGlE;IAAwC,sCAAiC;IACrE;QACI,iBAAO,CAAC;IACZ,CAAC;IAEL,yBAAC;AAAD,CAAC,AALD,CAAwC,mBAAmB,CAAC,aAAa,GAKxE;AALY,0BAAkB,qBAK9B,CAAA"}

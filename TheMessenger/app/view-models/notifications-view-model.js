@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var serviceModule = require("../shared/service");
 var viewModelBaseModule = require("../common/view-model-base");
 var observableModule = require("data/observable");
@@ -7,12 +6,11 @@ var months = ["January", "February", "March", "April", "May", "June", "July", "A
 var NotificationsItemData = (function (_super) {
     __extends(NotificationsItemData, _super);
     function NotificationsItemData(id, title, notification, publisheddate) {
-        var _this = _super.call(this) || this;
-        _this.Title = title;
-        _this.Notification = notification;
-        _this.PublishedDate = _this.formatToShortDate(publisheddate);
-        _this.ID = id;
-        return _this;
+        _super.call(this);
+        this.Title = title;
+        this.Notification = notification;
+        this.PublishedDate = this.formatToShortDate(publisheddate);
+        this.ID = id;
     }
     NotificationsItemData.prototype.formatDate = function (date) {
         return date.getDate() + " " + months[date.getMonth()] + ", " + date.getFullYear();
@@ -28,7 +26,7 @@ exports.NotificationsItemData = NotificationsItemData;
 var NotificationsViewModel = (function (_super) {
     __extends(NotificationsViewModel, _super);
     function NotificationsViewModel() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     Object.defineProperty(NotificationsViewModel.prototype, "Notifications", {
         get: function () {

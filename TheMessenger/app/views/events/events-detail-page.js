@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var frame = require("ui/frame");
 var viewModel;
 function pageNavigatedTo(args) {

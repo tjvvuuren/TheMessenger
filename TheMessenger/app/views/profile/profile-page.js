@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var viewModelModule = require("../../view-models/base-view-model");
 function pageLoaded(args) {
     console.log("Page loaded");

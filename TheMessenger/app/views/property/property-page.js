@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var dialogsModule = require("ui/dialogs");
 var observableModule = require("data/observable");
 //var ObservableArray = require("data/observable-array").ObservableArray;

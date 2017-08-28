@@ -1,1 +1,1 @@
-{"version":3,"file":"motoring-fandi-view-model.js","sourceRoot":"","sources":["motoring-fandi-view-model.ts"],"names":[],"mappings":";;AAEA,+DAAkE;AAGlE;IAA4C,0CAAiC;IACzE;eACI,iBAAO;IACX,CAAC;IAEL,6BAAC;AAAD,CAAC,AALD,CAA4C,mBAAmB,CAAC,aAAa,GAK5E;AALY,wDAAsB"}
+{"version":3,"file":"motoring-fandi-view-model.js","sourceRoot":"","sources":["motoring-fandi-view-model.ts"],"names":[],"mappings":";AAEA,IAAO,mBAAmB,WAAW,2BAA2B,CAAC,CAAC;AAGlE;IAA4C,0CAAiC;IACzE;QACI,iBAAO,CAAC;IACZ,CAAC;IAEL,6BAAC;AAAD,CAAC,AALD,CAA4C,mBAAmB,CAAC,aAAa,GAK5E;AALY,8BAAsB,yBAKlC,CAAA"}

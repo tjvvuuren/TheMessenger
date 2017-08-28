@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var dialogsModule = require("ui/dialogs");
 function showError(error) {
     dialogsModule.alert({ title: "Error", message: error, okButtonText: "Close" });

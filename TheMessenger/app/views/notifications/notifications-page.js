@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var viewNotificationsViewModel = require("../../view-models/notifications-view-model");
 var viewModel;
 function pageLoaded(args) {
