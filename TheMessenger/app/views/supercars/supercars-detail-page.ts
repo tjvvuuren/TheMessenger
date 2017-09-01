@@ -3,7 +3,6 @@ import viewNewsViewModel = require("../../view-models/supercars-view-model");
 import * as frame from "ui/frame";
 import appModule = require("application");
 
-
 var viewModel: viewNewsViewModel.NewsListViewModel;
 export function pageLoaded(args) {
     var page = args.object;
@@ -11,12 +10,12 @@ export function pageLoaded(args) {
 export function navigatingTo(args) {
     var page = args.object;
     var item = args.context;
+    //alert("GP");
     page.bindingContext = item;
 }
 
- 
 export function onNavBtnTap() {
-       var topmost = frame.topmost();
-        topmost.goBack();
-    }
+    var topmost = frame.topmost();
+    topmost.goBack();
+}
 

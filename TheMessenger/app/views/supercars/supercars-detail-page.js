@@ -8,6 +8,7 @@ exports.pageLoaded = pageLoaded;
 function navigatingTo(args) {
     var page = args.object;
     var item = args.context;
+    //alert("GP");
     page.bindingContext = item;
 }
 exports.navigatingTo = navigatingTo;

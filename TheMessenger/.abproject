@@ -7,7 +7,7 @@
   "Author": "Leapfrog GLobal",
   "Description": "The Messenger - a GLOBAL first by LEAPFROG",
   "BundleVersion": "1.0",
-  "AndroidVersionCode": "1",
+  "AndroidVersionCode": "2",
   "iOSDeviceFamily": [
     "1",
     "2"
@@ -24,5 +24,6 @@
   "AndroidHardwareAcceleration": "true",
   "iOSStatusBarStyle": "Default",
   "FrameworkVersion": "2.5.0",
-  "Framework": "NativeScript"
+  "Framework": "NativeScript",
+  "iOSDeploymentTarget": "8.0"
 }

@@ -1,12 +1,12 @@
 {
-  "nativescript": {},
-  "dependencies": {
-    "tns-core-modules": "2.5.1",
-    "nativescript-telerik-ui-pro": "3.1.0-2017-7-26-4",
-    "nativescript-plugin-livepatch": "1.0.2",
-    "everlive-sdk": "1.9.4"
-  },
-  "devDependencies": {
-    "nativescript-dev-android-snapshot": "0.0.6"
-  }
+    "nativescript": {},
+    "dependencies": {
+        "tns-core-modules": "2.5.1",
+        "nativescript-telerik-ui-pro": "3.1.0-2017-8-25-1",
+        "everlive-sdk": "1.9.4",
+        "nativescript-plugin-livepatch": "1.0.2"
+    },
+    "devDependencies": {
+        "nativescript-dev-android-snapshot": "0.0.6"
+    }
 }
