@@ -1,6 +1,8 @@
 //import application = require("application");
-
+import "./bundle-config";
+import * as app from 'application';
 import { on as applicationOn, launchEvent, ApplicationEventData, setCssFileName,start as applicationStart } from "application";
+var Analytics = require('nativescript-telerik-analytics');
 //var Everlive = require('everlive-sdk');
 var everliveModule = require("./lib/everlive.all.min");
 //import * as Everlive from 'everlive-sdk';
@@ -16,10 +18,14 @@ applicationOn(launchEvent, function (args: ApplicationEventData) {
                 apiKey: constantsModule.telerikApiKey
             });
         }
+
+    // Initialize the Analytics plugin and start a new session when the application starts
+    Analytics.init({ appId: '9fi6b79u9cyuqehq' });
+    Analytics.start();
 });
 
 
-applicationStart({ moduleName: "main-page" });
+app.start({ moduleName: 'main-page' });
 
 //document.addEventListener("deviceready", function() {
     //var everlive = new Everlive({
