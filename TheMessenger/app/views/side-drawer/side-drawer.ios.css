@@ -1,4 +1,4 @@
-@import { url('~/views/side-drawer/side-drawer-common.css') };
+@import url('~/views/side-drawer/side-drawer-common.css');
 
 .drawer-button,
 .drawer-button-external {
