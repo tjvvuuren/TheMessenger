@@ -2,8 +2,8 @@
     loaded="pageLoaded" 
     navigatingTo="navigatingTo"
     cssFile="~/views/articles/articles-page-list.css"
-    xmlns:lv="nativescript-telerik-ui-pro/listview"
-    xmlns:nsDrawer="nativescript-telerik-ui-pro/sidedrawer"
+    xmlns:lv="nativescript-telerik-ui/listview"
+    xmlns:nsDrawer="nativescript-telerik-ui/sidedrawer"
     xmlns:shared="shared"
     backgroundSpanUnderStatusBar="true"
     actionBarHidden="false">

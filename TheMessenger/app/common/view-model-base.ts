@@ -7,7 +7,7 @@ import dialogsModule = require("ui/dialogs");
 import connectivity = require("connectivity");
 
 import * as navigator from "./navigator";
-import drawerModule = require("nativescript-telerik-ui-pro/sidedrawer");
+import drawerModule = require("nativescript-telerik-ui/sidedrawer");
 import frame = require("tns-core-modules/ui/frame");
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

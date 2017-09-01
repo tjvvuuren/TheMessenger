@@ -1,7 +1,7 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd"
     navigatingTo="navigatingTo"
     cssFile="~/views/news/news-detail-page.css"
-    xmlns:lv="nativescript-telerik-ui-pro/listview"
+    xmlns:lv="nativescript-telerik-ui/listview"
     xmlns:shared="shared"
     backgroundSpanUnderStatusBar="true"
     actionBarHidden="false">
