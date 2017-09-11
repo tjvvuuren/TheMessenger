@@ -28,6 +28,19 @@
                 <string>icon-76.png</string>
                 <string>icon-76@2x.png</string>
                 <string>icon-83.5@2x.png</string>
+
+                <string>ic_add_to_fav.png</string>
+                <string>ic_arrow_back.png</string>
+                <string>ic_arrow_down.png</string>
+                <string>ic_back.png</string>
+                <string>ic_close.png</string>
+                <string>ic_delete.png</string>
+                <string>ic_menu_btn.png</string>
+                <string>ic_menu_example.png</string>
+                <string>ic_menu_main.png</string>
+                <string>ic_menu.png</string>
+                <string>ic_next.png</string>
+                <string>ic_prev.png</string>
             </array>
             <key>UIPrerenderedIcon</key>
             <true/>
