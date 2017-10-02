@@ -15,6 +15,5 @@ function onNavBtnTap() {
     var topmost = frame.topmost();
     topmost.goBack();
 }
+exports.onNavBtnTap = onNavBtnTap;
 //# sourceMappingURL=articles-detail-page.js.map
-
-     

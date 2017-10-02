@@ -20,4 +20,3 @@ function navigatingTo(args) {
 }
 exports.navigatingTo = navigatingTo;
 //# sourceMappingURL=events-page-list.js.map
-
