@@ -97,6 +97,14 @@ var ArticleListViewModel = (function (_super) {
         this._Mode = "INNOVATION";
         this.getArticlesForCategory("INNOVATION");
     };
+    ArticleListViewModel.prototype.onTap_WaterMode = function (args) {
+        this._Mode = "WATER";
+        this.getArticlesForCategory("WATER");
+    };
+    ArticleListViewModel.prototype.onTap_BrexitMode = function (args) {
+        this._Mode = "BRICS";
+        this.getArticlesForCategory("BRICS");
+    };
     ArticleListViewModel.prototype.onItemTap = function (args) {
         var index = args.index;
         //console.log(index);

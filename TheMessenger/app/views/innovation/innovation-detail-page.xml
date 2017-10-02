@@ -18,7 +18,7 @@
             <Image col="0" rowspan="3" class="imgDetail" src="{{ MediaUrl }}" />
             <Label row="1" col="1" class="detailDateTitle" textWrap="true" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}" />
             <Label row="2" col="1" class="detailDateTitle" textWrap="true" text="{{ Creator }}" />  
-            <WebView row="3" colspan="2" src="{{ NewsContent }}" class="detailContent" textWrap="true"/>    
+            <HtmlView row="3" colspan="2" html="{{ NewsContent }}" class="detailContent" textWrap="true"/>    
         </GridLayout>
 
     </GridLayout>

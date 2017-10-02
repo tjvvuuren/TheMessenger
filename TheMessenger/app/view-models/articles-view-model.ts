@@ -107,6 +107,17 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
         this._Mode = "INNOVATION";
         this.getArticlesForCategory("INNOVATION");
     }
+    onTap_WaterMode(args)
+    {
+        this._Mode = "WATER";
+        this.getArticlesForCategory("WATER");
+    }
+    onTap_BrexitMode(args)
+    {
+        this._Mode = "BRICS";
+        this.getArticlesForCategory("BRICS");
+    }
+     
     onItemTap(args){
         var index = args.index;
         //console.log(index);

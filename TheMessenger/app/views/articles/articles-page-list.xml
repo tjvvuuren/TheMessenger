@@ -28,8 +28,8 @@
         <nsDrawer:RadSideDrawer.mainContent>
 
             <GridLayout rows="auto, *, auto" backgroundColor="white">
-
-                <GridLayout row="0" columns="*,*,*" class="blue-background">
+<ScrollView orientation="horizontal" style=" flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row' ">
+                <GridLayout row="0" columns="auto,auto,auto,auto,auto" class="blue-background">
                     <StackLayout orientation="vertical" class="{{ Mode == 'BUSINESS' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
                         <Button text="Business" tap="{{ onTap_BussinesMode }}" class="{{ Mode == 'BUSINESS' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
                         <GridLayout class="{{ Mode === 'BUSINESS' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
@@ -38,11 +38,21 @@
                         <Button text="Politics" tap="{{ onTap_PoliticsMode }}" class="{{ Mode == 'POLITICS' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
                         <GridLayout class="{{ Mode === 'POLITICS' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
                     </StackLayout>
-                    <StackLayout col="2" orientation="vertical" class="{{ Mode == 'INNOVATION' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
-                        <Button text="Innovation" tap="{{ onTap_InnovationMode }}" class="{{ Mode == 'INNOVATION' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                    <StackLayout col="2" orientation="vertical" class="{{ Mode == 'BRICS' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Brics" tap="{{ onTap_BrexitMode }}" class="{{ Mode == 'BRICS' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'BRICS' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                   <StackLayout col="3" orientation="vertical" class="{{ Mode == 'WATER' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Water" tap="{{ onTap_WaterMode }}" class="{{ Mode == 'WATER' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'WATER' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="4" orientation="vertical" class="{{ Mode == 'INNOVATION' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Innovation" tap="{{ onTap_InnovationMode }}" class="{{ Mode == 'INNOVATION' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
                         <GridLayout class="{{ Mode === 'INNOVATION' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
                     </StackLayout>
                 </GridLayout>
+              
+        </ScrollView>       
                 <ScrollView row="1">
                     <ListView class="list-view" id="lstArticles" items="{{ Articles }}" itemTap="{{ onItemTap }}">
                         <ListView.itemTemplate>
