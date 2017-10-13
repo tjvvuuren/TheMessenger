@@ -1,0 +1,89 @@
+@import url('~/views/articles/articles-common.css');
+
+.list-view {
+    animation-name: articlesContentAnimation;
+    animation-duration: 2;
+}
+
+@keyframes articlesContentAnimation {
+    from { transform: translate(0, -700); }
+    to { transform: translate(0, 0); }
+}
+
+.example-title {
+    color: white;
+    font-size: 20;     
+}
+
+.modeSelectedButtonStyle {
+    horizontal-align: center;
+    vertical-align: center;
+    font-size: 15;
+    color: white;
+    padding: 10;
+    background-color: #30BCFF;
+}
+
+.modeButtonStyle{
+    color: #677881;
+    font-size: 15;
+    horizontal-align: center;
+    vertical-align: center;
+    padding: 10;
+    border:0;
+    background-color: #fafeff;
+}
+
+.modeSelectedButtonStackPanelStyle {
+    background-color: #30BCFF;
+}
+.modeButtonStyleStackPanelStyle {
+    background-color: #fafeff;
+}
+
+.seperatorBottomBorder {
+    background-color: #151F2F;
+    height: 1;
+    vertical-align: bottom;
+}
+
+.titleStyle {
+    font-family: "Georgia";
+    font-size: 16;
+    color: #455b66;
+    margin-left: 10;
+    border-bottom: 1 solid lightgray;
+}
+.imgList {
+    width:70px;
+    padding: 2;
+}
+.dateStyle {
+    font-size: 12;
+    color: #677881;
+    padding: 5;
+
+}
+.contentStyle {
+    font-size: 14;
+    color: #677881;
+    margin-top: 4;
+    margin-left: 10;
+    margin-right: 10;
+    margin-bottom: 4;
+}
+
+.blue-button {
+    horizontal-align: center;
+    vertical-align: center;
+    margin: 12 0;    
+} 
+
+.reorder-handle {
+    margin: 16;
+}
+
+.check-box {
+    margin: 8; 
+}
+

@@ -1,0 +1,32 @@
+
+.title{
+    margin-top:30px;
+    font-size:60;
+    color:000;
+    font-weight:bold;
+    text-align: center;
+    font-family: "ABeeZee", sans-serif;
+}
+
+.voteBtn{
+border: 1px solid #0087bf;
+display:block;
+width:150;
+margin:10px auto;
+padding:7px 13px;
+text-align:center;
+background: #0087bf;
+font-size:20px;
+}
+.pollbar{
+    margin:1px;
+    font-size:6;
+    line-height:8px;
+    background: #0087bf;
+    border:1px solid #c8c8c8;
+}
+wp-polls-ul{
+    text-align:left;
+    float:none;
+    
+}

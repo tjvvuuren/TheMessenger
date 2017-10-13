@@ -133,6 +133,34 @@ var ViewModelBase = (function (_super) {
         //console.log("navigatingToHome");
         navigator.navigatingToContactCentre();
     };
+    ViewModelBase.prototype.navigateToBrics = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToBrics();
+    };
+    ViewModelBase.prototype.navigateToDigitalEconomy = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToDigitalEconomy();
+    };
+    ViewModelBase.prototype.navigateToWater = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToWater();
+    };
+    ViewModelBase.prototype.navigateToImpact = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToImpact();
+    };
+    ViewModelBase.prototype.navigateToClub = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToClub();
+    };
+     ViewModelBase.prototype.navigateToBusiness = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToBusiness();
+    };
+     ViewModelBase.prototype.navigateToTest = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToTest();
+    };
     return ViewModelBase;
 }(observableModule.Observable));
 exports.ViewModelBase = ViewModelBase;

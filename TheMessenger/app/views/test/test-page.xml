@@ -1,0 +1,22 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    loaded="pageLoaded" 
+    cssFile="~/views/test/test-page.css"
+    xmlns:lv="nativescript-telerik-ui/listview"
+    xmlns:nsDrawer="nativescript-telerik-ui/sidedrawer"
+    xmlns:shared="shared"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="false">
+    
+     <Page.actionBar>
+     <ActionBar title="Impact Investing" class="action-bar">
+        
+            <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+
+    <GridLayout rows="auto" > 
+<!--<Label class="title" text="Coming Soon!"/>-->
+<Image class="coming-soon" src="~/images/Coming-Soon.jpg" />
+ </GridLayout>
+    
+</Page>

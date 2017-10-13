@@ -116,6 +116,76 @@ export function navigatingToContactCentre() {
         });
     }
 }
+export function navigateToBrics() {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/brics/brics") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: traceNavigateTo("views/brics/brics"),
+            context: null
+        });
+    }
+}
+export function navigateToBusiness() {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/business/business-list-page") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: traceNavigateTo("views/business/business-list-page"),
+            context: null
+        });
+    }
+}
+export function navigateToDigitalEconomy() {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/digitalEconomy/digitalEconomy-list-page") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: traceNavigateTo("views/digitalEconomy/digitalEconomy-list-page"),
+            context: null
+        });
+    }
+}
+export function navigateToWater() {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/water/water-list-page") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: traceNavigateTo("views/water/water-list-page"),
+            context: null
+        });
+    }
+}
+export function navigateTest() {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/test/test-page") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: traceNavigateTo("views/test/test-page"),
+            context: null
+        });
+    }
+}
+export function navigateToClub() {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/club/club-list-page") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: traceNavigateTo("views/club/club-list-page"),
+            context: null
+        });
+    }
+}
+export function navigateToImpact() {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/impact/impact-list-page") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: traceNavigateTo("views/impact/impact-list-page"),
+            context: null
+        });
+    }
+}
 export function navigateToAbout() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/about/about") {

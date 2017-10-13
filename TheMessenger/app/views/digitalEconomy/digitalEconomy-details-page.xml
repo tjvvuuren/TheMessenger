@@ -1,0 +1,26 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns:shared="shared"
+    actionBarHidden="false"
+    cssFile="~/views/digitalEconomy/digitalEconomy-details-page.css"
+    loaded="pageLoaded"
+    navigatedTo="pageNavigatedTo">
+
+    <Page.actionBar>
+        <ActionBar title="Article Detail" class="action-bar">
+            <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+    
+    <GridLayout rows="auto, *">
+        <Label row="0" class="detailTitle" textWrap="true" text="{{ Title }}" />
+        
+        <GridLayout row="1" rows="auto, auto, auto, *" columns="auto, *">
+            <Image col="0" rowspan="3" class="imgDetail" src="{{ MediaUrl }}" />
+            <Label row="1" col="1" class="detailDateTitle" textWrap="true" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}" />
+            <Label row="2" col="1" class="detailDateTitle" textWrap="true" text="{{ Creator }}" />  
+            <WebView row="3" colspan="2" src="{{ ArticleContent }}" class="detailContent" textWrap="true"/>    
+        </GridLayout>
+
+    </GridLayout>
+</Page>
+

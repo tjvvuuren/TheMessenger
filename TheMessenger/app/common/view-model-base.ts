@@ -153,7 +153,34 @@ export class ViewModelBase extends observableModule.Observable {
 	    //console.log("navigatingToHome");
 	    navigator.navigatingToContactCentre();
     }
-
+ navigateToBrics(args) {
+	    //console.log("navigatingToHome");
+	    navigator.navigatingToBrics();
+    }
+     navigateToDigitalEconomy(args) {
+	    //console.log("navigatingToHome");
+	    navigator.navigatingToDigitalEconomy();
+    }
+     navigateToImpact(args) {
+	    //console.log("navigatingToHome");
+	    navigator.navigatingToImpact();
+    }
+     navigateToWater(args) {
+	    //console.log("navigatingToHome");
+	    navigator.navigatingToWater();
+    }
+     navigateToClub(args) {
+	    //console.log("navigatingToHome");
+	    navigator.navigatingToClub();
+    }
+    navigateToBusiness(args) {
+	    //console.log("navigatingToHome");
+	    navigator.navigatingToBusiness();
+    }
+    navigateToTest(args) {
+	    //console.log("navigatingToHome");
+	    navigator.navigatingToTest();
+    }
     
 
 }
