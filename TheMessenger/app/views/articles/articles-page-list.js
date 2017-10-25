@@ -19,4 +19,10 @@ function navigatingTo(args) {
     viewModel.refresh();
 }
 exports.navigatingTo = navigatingTo;
+var ScrollViewHorizontalComponent = (function () {
+    function ScrollViewHorizontalComponent() {
+    }
+    return ScrollViewHorizontalComponent;
+}());
+exports.ScrollViewHorizontalComponent = ScrollViewHorizontalComponent;
 //# sourceMappingURL=articles-page-list.js.map

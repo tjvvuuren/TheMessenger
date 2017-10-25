@@ -24,5 +24,6 @@
         <WebView row="2" src="{{ EventContent }}" class="detailContent" textWrap="true"/>
         <Button row="3" text="Register" />
     </GridLayout>
+
 </Page>
 
