@@ -145,5 +145,4 @@ var ArticleListViewModel = (function (_super) {
     return ArticleListViewModel;
 }(viewModelBaseModule.ViewModelBase));
 exports.ArticleListViewModel = ArticleListViewModel;
-
 //# sourceMappingURL=brics-view-model.js.map

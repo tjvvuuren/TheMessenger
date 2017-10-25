@@ -6,7 +6,7 @@
   "DisplayName": "TheMessenger",
   "Author": "Leapfrog GLobal",
   "Description": "The Messenger - a GLOBAL first by LEAPFROG",
-  "BundleVersion": "1.4",
+  "BundleVersion": "2.0",
   "AndroidVersionCode": "2",
   "iOSDeviceFamily": [
     "1",
