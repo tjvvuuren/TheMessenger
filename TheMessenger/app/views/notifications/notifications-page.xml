@@ -8,29 +8,33 @@
     backgroundSpanUnderStatusBar="true"
     actionBarHidden="false">
     
-    <Page.actionBar>
-        <ActionBar title="Notifications" class="action-bar">
-            <android>
+      <Page.actionBar>
+        <ActionBar  class="action-bar">
+        <android>
                 <NavigationButton android.systemIcon="ic_menu_moreoverflow" tap="{{ toggleDrawerState }}" />
             </android>
             <ios>
                 <NavigationButton visibility="collapsed"/>
                 <ActionItem icon="res://ic_menu" ios.position="left" tap="{{ toggleDrawerState }}" />
             </ios>
+        <Image src="~/images/messenger_splash.png" width="100" height="40" />
         </ActionBar>
     </Page.actionBar>
-
-    <nsDrawer:RadSideDrawer id="sideDrawer">
+    
+              
+         <nsDrawer:RadSideDrawer id="sideDrawer">
         <nsDrawer:RadSideDrawer.drawerContent>
-            <shared:drawer />
+            <shared:draw />
         </nsDrawer:RadSideDrawer.drawerContent>
 
         <nsDrawer:RadSideDrawer.mainContent>
-            <GridLayout rows="*,60">
-                <ScrollView row="0">
-                    <ListView row="1" class="list-view" items="{{ Notifications }}">
+
+            <GridLayout rows="auto,*,auto" backgroundColor="white">
+            
+<shared:drawer />            
+                <ScrollView row="1">  
+                    <ListView class="list-view" items="{{ Notifications }}" >
                         <ListView.itemTemplate>
-                            
                             <ios>
                                 <GridLayout rows="auto,auto,*" class="itemStyle" >
                                     <Label row="0" class="titleStyle" textWrap="true" Text="{{  Title }}" />
@@ -47,10 +51,9 @@
                             </android>
                         </ListView.itemTemplate>
                     </ListView>
-                </ScrollView>
-                <ActivityIndicator busy="{{ isLoading }}" width="100" height="100" class="activity-indicator"></ActivityIndicator>
-            </GridLayout>
-            
-        </nsDrawer:RadSideDrawer.mainContent>
+              </ScrollView>  
+               
+            </GridLayout>  
+                 </nsDrawer:RadSideDrawer.mainContent>
     </nsDrawer:RadSideDrawer>
 </Page>

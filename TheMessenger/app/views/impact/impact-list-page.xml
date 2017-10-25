@@ -9,19 +9,12 @@
     
     <Page.actionBar>
         <ActionBar title="{{ PageTitle }}" class="action-bar">
-            <android>
-                <NavigationButton android.systemIcon="ic_menu_moreoverflow" tap="{{ toggleDrawerState }}" />
-            </android>
-            <ios>
-                <NavigationButton visibility="collapsed"/>
-                <ActionItem icon="res://ic_menu" ios.position="left" tap="{{ toggleDrawerState }}" />
-            </ios>
         </ActionBar>
     </Page.actionBar>
-
+  <shared:drawer />
     <nsDrawer:RadSideDrawer id="sideDrawer">
         <nsDrawer:RadSideDrawer.drawerContent>
-            <shared:drawer />
+            <shared:draw />
         </nsDrawer:RadSideDrawer.drawerContent>
 
         <nsDrawer:RadSideDrawer.mainContent>

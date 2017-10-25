@@ -181,6 +181,10 @@ export class ViewModelBase extends observableModule.Observable {
 	    //console.log("navigatingToHome");
 	    navigator.navigatingToTest();
     }
+    navigateToAbout(args) {
+	    //console.log("navigatingToHome");
+	    navigator.navigatingToAbout();
+    }
     
 
 }

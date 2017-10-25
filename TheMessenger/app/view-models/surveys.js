@@ -30,7 +30,7 @@ var SurveyListViewModel = (function (_super) {
     function SurveyListViewModel(mode) {
         _super.call(this);
         this._Mode = mode;
-        this._businesssurveys = new Array();
+        this._dailypollSurveys = new Array();
         this.getSurveysForCategory("DAILYPOLL");
     }
     Object.defineProperty(SurveyListViewModel.prototype, "Mode", {
@@ -43,13 +43,13 @@ var SurveyListViewModel = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SurveyListViewModel.prototype, "Surveys", {
+    Object.defineProperty(SurveyListViewModel.prototype, "Survey", {
         get: function () {
-            return this._Survey;
+            return this._survey;
         },
         set: function (value) {
-            if (this._Survey != value) {
-                this._Survey = value;
+            if (this._survey != value) {
+                this._survey = value;
                 this.notifyPropertyChange("Survey", value);
             }
         },
@@ -69,33 +69,19 @@ var SurveyListViewModel = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SurveyListViewModel.prototype, "SurveySurveys", {
-        get: function () {
-            return this._businesssurveys;
-        },
-        set: function (value) {
-            if (this._businesssurveys != value) {
-                this._businesssurveys = value;
-                this.notifyPropertyChange("surveys", value);
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
     SurveyListViewModel.prototype.onTap_DailypollMode = function (args) {
         this._Mode = "DAILYPOLL";
-        this.getsurveysForCategory("DAILYPOLL");
+        this.getSurveysForCategory("DAILYPOLL");
     };
-    SurveyListViewModel.prototype.onTap_SummarysMode = function (args) {
+    SurveyListViewModel.prototype.onTap_SummaryMode = function (args) {
         this._Mode = "SUMMARY";
-        this.getsurveysForCategory("SUMMARY");
+        this.getSurveysForCategory("SUMMARY");
     };
-    
     SurveyListViewModel.prototype.onItemTap = function (args) {
         var index = args.index;
         //console.log(index);
         this.Survey = args.view.bindingContext;
-        //console.log("Survey List onItemTap CurrentItem: " + this.Survey.Title);
+        //console.log("Article List onItemTap CurrentItem: " + this.Article.Title);
         frame_1.topmost().navigate({
             moduleName: "views/dailyPoll/dailyPoll",
             animated: true,
@@ -110,24 +96,23 @@ var SurveyListViewModel = (function (_super) {
             var surveys = new Array();
             for (var i = 0; i < data.length; i++) {
                 //console.log(data[i].Title);
-                surveys.push(new SurveyItemData(i, data[i].Title, data[i].Description, data[i].SurveyContent, data[i].PostDate, data[i].Category, data[i].Creator, data[i].MediaUrl));
+                surveys.push(new SurveyItemData(i, data[i].SurveyContent, data[i].PostDate, data[i].Category, data[i].MediaUrl));
             }
             _this.Mode = _this._Mode;
-            _this.surveys = surveys;
+            _this.Surveys = surveys;
             _this.endLoading();
         }, function (error) {
             _this.endLoading();
         });
     };
-    
-    surveysListViewModel.prototype.refresh = function () {
+    SurveyListViewModel.prototype.refresh = function () {
         var _this = this;
         if (!this.beginLoading())
             return;
         serviceModule.service.getSurveys().then(function (data) {
             var surveys = new Array();
             for (var i = 0; i < data.length; i++) {
-                surveys.push(new surveysItemData(i,  data[i].SurveyContent, data[i].PostDate, data[i].Category,  data[i].MediaUrl));
+                surveys.push(new SurveyItemData(i, data[i].SurveyContent, data[i].PostDate, data[i].Category, data[i].MediaUrl));
             }
             _this.Mode = _this._Mode;
             _this.Surveys = surveys;
@@ -139,4 +124,4 @@ var SurveyListViewModel = (function (_super) {
     return SurveyListViewModel;
 }(viewModelBaseModule.ViewModelBase));
 exports.SurveyListViewModel = SurveyListViewModel;
-//# sourceMappingURL=surveys-view-model.js.map
+//# sourceMappingURL=surveys.js.map

@@ -76,6 +76,10 @@ var ArticleListViewModel = (function (_super) {
         this._Mode = "BRICS";
         this.getArticlesForCategory("BRICS");
     };
+    ArticleListViewModel.prototype.onTap_BrexitMode = function (args) {
+        this._Mode = "BREXIT";
+        this.getArticlesForCategory("BREXIT");
+    };
     ArticleListViewModel.prototype.onItemTap = function (args) {
         var index = args.index;
         //console.log(index);
@@ -87,11 +91,29 @@ var ArticleListViewModel = (function (_super) {
             context: this.Article
         });
     };
+    ArticleListViewModel.prototype.getCombinedArticles = function () {
+        var _this = this;
+        var categories = [{ value: "BRICS" }, { value: "BREXIT" }];
+        if (!this.beginLoading())
+            return;
+        serviceModule.service.getCombinedArticles(categories).then(function (data) {
+            var articles = new Array();
+            for (var i = 0; i < data.length; i++) {
+                //console.log(data[i].Title);
+                articles.push(new ArticleItemData(i, data[i].Title, data[i].Description, data[i].ArticleContent, data[i].PostDate, data[i].Category, data[i].Creator, data[i].MediaUrl));
+            }
+            _this.Mode = _this._Mode;
+            _this.Articles = articles;
+            _this.endLoading();
+        }, function (error) {
+            _this.endLoading();
+        });
+    };
     ArticleListViewModel.prototype.getArticlesForCategory = function (category) {
         var _this = this;
         if (!this.beginLoading())
             return;
-        serviceModule.service.getArticlesByCategory(category).then(function (data) {
+        serviceModule.service.getArticlesByCategory2(category).then(function (data) {
             var articles = new Array();
             for (var i = 0; i < data.length; i++) {
                 //console.log(data[i].Title);
@@ -123,4 +145,5 @@ var ArticleListViewModel = (function (_super) {
     return ArticleListViewModel;
 }(viewModelBaseModule.ViewModelBase));
 exports.ArticleListViewModel = ArticleListViewModel;
+
 //# sourceMappingURL=brics-view-model.js.map

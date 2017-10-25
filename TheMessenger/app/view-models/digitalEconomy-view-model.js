@@ -34,7 +34,7 @@ var ArticleListViewModel = (function (_super) {
         _super.call(this);
         this._Mode = mode;
         this._innovationArticles = new Array();
-        this.getArticlesForCategory("INNOVATION");
+        this.getArticlesForCategory("DIGITAL");
     }
     Object.defineProperty(ArticleListViewModel.prototype, "Mode", {
         get: function () {
@@ -97,9 +97,9 @@ var ArticleListViewModel = (function (_super) {
         this._Mode = "WATER";
         this.getArticlesForCategory("WATER");
     };
-    ArticleListViewModel.prototype.onTap_BricsMode = function (args) {
-        this._Mode = "BRICS";
-        this.getArticlesForCategory("BRICS");
+    ArticleListViewModel.prototype.onTap_DigitalMode = function (args) {
+        this._Mode = "DIGITAL";
+        this.getArticlesForCategory("DIGITAL");
     };
     ArticleListViewModel.prototype.onItemTap = function (args) {
         var index = args.index;
@@ -116,7 +116,7 @@ var ArticleListViewModel = (function (_super) {
         var _this = this;
         if (!this.beginLoading())
             return;
-        serviceModule.service.getArticlesByCategory(category).then(function (data) {
+        serviceModule.service.getArticlesByCategory4(category).then(function (data) {
             var articles = new Array();
             for (var i = 0; i < data.length; i++) {
                 //console.log(data[i].Title);

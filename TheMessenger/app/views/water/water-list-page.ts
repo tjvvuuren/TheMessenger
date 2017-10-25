@@ -7,7 +7,7 @@ var viewModel: viewArticlesViewModel.ArticleListViewModel;
 export function pageLoaded(args) {
     var page = args.object;
 
-    viewModel = new viewArticlesViewModel.ArticleListViewModel("INNOVATION");
+    viewModel = new viewArticlesViewModel.ArticleListViewModel("WATER");
 
     page.bindingContext = viewModel;
     viewModel.refresh(); 
@@ -20,7 +20,7 @@ export function navigatingTo(args) {
     if(viewModel == null)
     {   
         console.log("navigatingTo: viewModel == null");
-        viewModel = new viewArticlesViewModel.ArticleListViewModel("INNOVATION");
+        viewModel = new viewArticlesViewModel.ArticleListViewModel("WATER");
     }
     //console.log("navigatingTo: " + JSON.stringify(viewModel.Notifications));
 

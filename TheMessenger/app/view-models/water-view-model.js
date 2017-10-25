@@ -72,17 +72,13 @@ var ArticleListViewModel = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ArticleListViewModel.prototype, "BricsArticles", {
+    Object.defineProperty(ArticleListViewModel.prototype, "WaterArticles", {
         get: function () {
-            return this.bricsArticles;
+            return this._waterArticles;
         },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ArticleListViewModel.prototype, "BrexitArticles", {
         set: function (value) {
-            if (this._brexitArticles != value) {
-                this._brexitArticles = value;
+            if (this._waterArticles != value) {
+                this._waterArticles = value;
                 this.notifyPropertyChange("Articles", value);
             }
         },
@@ -120,7 +116,7 @@ var ArticleListViewModel = (function (_super) {
         var _this = this;
         if (!this.beginLoading())
             return;
-        serviceModule.service.getArticlesByCategory(category).then(function (data) {
+        serviceModule.service.getArticlesByCategory3(category).then(function (data) {
             var articles = new Array();
             for (var i = 0; i < data.length; i++) {
                 //console.log(data[i].Title);
@@ -137,8 +133,8 @@ var ArticleListViewModel = (function (_super) {
         if (!this.beginLoading())
             return;
         var articles = new Array();
-        for (var i = 0; i < this.BusinessArticles.length; i++) {
-            articles.push(new ArticleItemData(i, this.BusinessArticles[i].Title, this.BusinessArticles[i].Description, this.BusinessArticles[i].ArticleContent, this.BusinessArticles[i].PostDate, this.BusinessArticles[i].Category, this.BusinessArticles[i].Creator, this.BusinessArticles[i].MediaUrl));
+        for (var i = 0; i < this.WaterArticles.length; i++) {
+            articles.push(new ArticleItemData(i, this.WaterArticles[i].Title, this.WaterArticles[i].Description, this.WaterArticles[i].ArticleContent, this.WaterArticles[i].PostDate, this.WaterArticles[i].Category, this.WaterArticles[i].Creator, this.WaterArticles[i].MediaUrl));
         }
     };
     ArticleListViewModel.prototype.refresh = function () {

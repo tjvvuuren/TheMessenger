@@ -8,15 +8,62 @@
     
     <Page.actionBar>
         <ActionBar title="The Messenger" class="action-bar">
-            <android>
+           <!-- <android>
                 <NavigationButton android.systemIcon="ic_menu_moreoverflow" tap="{{ toggleDrawerState }}" />
             </android>
             <ios>
                 <NavigationButton visibility="collapsed"/>
                 <ActionItem icon="res://ic_menu" ios.position="left" tap="{{ toggleDrawerState }}" />
-            </ios>
+            </ios>-->
         </ActionBar>
     </Page.actionBar>
+    <GridLayout rows="auto, *, auto" backgroundColor="white">
+<ScrollView orientation="horizontal" style=" flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row' ">
+                <GridLayout row="0" columns="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" class="blue-background">
+                    <StackLayout orientation="vertical" class="{{ Mode == 'BUSINESS' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Notifications" tap="{{ navigateToNotifications }}" class="{{ Mode == 'BUSINESS' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'BUSINESS' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout  col="1" orientation="vertical" class="{{ Mode == 'BUSINESS' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Business & Politics" tap="{{ navigateToBusiness }}" class="{{ Mode == 'BUSINESS' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'BUSINESS' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="2" orientation="vertical" class="{{ Mode == 'BREXIT' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Brexit, Brics" tap="{{ navigateToBrics }}" class="{{ Mode == 'BREXIT' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'BREXIT' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="3" orientation="vertical" class="{{ Mode == 'BRICS' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Built Economy" tap="{{ navigateToWater }}" class="{{ Mode == 'BRICS' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'BRICS' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                   <StackLayout col="4" orientation="vertical" class="{{ Mode == 'WATER' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Digital Economy" tap="{{ navigateToDigitalEconomy }}" class="{{ Mode == 'WATER' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'WATER' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="5" orientation="vertical" class="{{ Mode == 'INNOVATION' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Impact Investing" tap="{{ navigateToImpact }}" class="{{ Mode == 'INNOVATION' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'INNOVATION' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="6" orientation="vertical" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Business Club" tap="{{ navigateToClub }}" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'IMPACT' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="7" orientation="vertical" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Lifestyle" tap="{{ navigateToLifestyle }}" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'IMPACT' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="8" orientation="vertical" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Community" tap="{{ navigatingToVoicesMain }}" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'IMPACT' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="9" orientation="vertical" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="About Us" tap="{{ navigateToAbout }}" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'IMPACT' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                </GridLayout>
+              
+        </ScrollView>       
+         </GridLayout> 
     <!--<GridLayout rows="*,60">
             <ScrollView row="0">
                 <WrapLayout orientation="horizontal">
@@ -29,12 +76,7 @@
             </ScrollView>
         </GridLayout>-->
  <!--<Button text="Testing Login" tap="{{ navigateToLogin }}"/>-->
-    <nsDrawer:RadSideDrawer id="sideDrawer">
-        <nsDrawer:RadSideDrawer.drawerContent>
-            <shared:drawer />
-        </nsDrawer:RadSideDrawer.drawerContent>
-
-        <nsDrawer:RadSideDrawer.mainContent>
+     <!-- <shared:drawer />
         <GridLayout rows="*,60">
             <ScrollView row="0">
                 <WrapLayout orientation="horizontal">
@@ -45,8 +87,6 @@
                     </StackLayout>
                 </WrapLayout>
             </ScrollView>
-        </GridLayout>
-            
-        </nsDrawer:RadSideDrawer.mainContent>
-    </nsDrawer:RadSideDrawer>
+        </GridLayout>-->
+
 </Page>

@@ -118,7 +118,7 @@ function navigatingToContactCentre() {
     }
 }
 exports.navigatingToContactCentre = navigatingToContactCentre;
-function navigateToBrics() {
+function navigatingToBrics() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/brics/brics") {
         frame.topmost().navigate({
@@ -128,8 +128,8 @@ function navigateToBrics() {
         });
     }
 }
-exports.navigateToBrics = navigateToBrics;
-function navigateToBusiness() {
+exports.navigatingToBrics = navigatingToBrics;
+function navigatingToBusiness() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/business/business-list-page") {
         frame.topmost().navigate({
@@ -139,8 +139,8 @@ function navigateToBusiness() {
         });
     }
 }
-exports.navigateToBusiness = navigateToBusiness;
-function navigateToDigitalEconomy() {
+exports.navigatingToBusiness = navigatingToBusiness;
+function navigatingToDigitalEconomy() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/digitalEconomy/digitalEconomy-list-page") {
         frame.topmost().navigate({
@@ -150,8 +150,8 @@ function navigateToDigitalEconomy() {
         });
     }
 }
-exports.navigateToDigitalEconomy = navigateToDigitalEconomy;
-function navigateToWater() {
+exports.navigatingToDigitalEconomy = navigatingToDigitalEconomy;
+function navigatingToWater() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/water/water-list-page") {
         frame.topmost().navigate({
@@ -161,8 +161,8 @@ function navigateToWater() {
         });
     }
 }
-exports.navigateToWater = navigateToWater;
-function navigateTest() {
+exports.navigatingToWater = navigatingToWater;
+function navigatingToTest() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/test/test-page") {
         frame.topmost().navigate({
@@ -172,8 +172,8 @@ function navigateTest() {
         });
     }
 }
-exports.navigateTest = navigateTest;
-function navigateToClub() {
+exports.navigatingToTest = navigatingToTest;
+function navigatingToClub() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/club/club-list-page") {
         frame.topmost().navigate({
@@ -183,8 +183,8 @@ function navigateToClub() {
         });
     }
 }
-exports.navigateToClub = navigateToClub;
-function navigateToImpact() {
+exports.navigatingToClub = navigatingToClub;
+function navigatingToImpact() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/impact/impact-list-page") {
         frame.topmost().navigate({
@@ -194,14 +194,18 @@ function navigateToImpact() {
         });
     }
 }
-exports.navigateToImpact = navigateToImpact;
-function navigateToAbout() {
+exports.navigatingToImpact = navigatingToImpact;
+function navigatingToAbout() {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/about/about") {
-        frame.topmost().navigate(traceNavigateTo("views/about/about"));
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: traceNavigateTo("views/about/about"),
+            context: null
+        });
     }
 }
-exports.navigateToAbout = navigateToAbout;
+exports.navigatingToAbout = navigatingToAbout;
 function navigateBack() {
     frame.goBack();
 }

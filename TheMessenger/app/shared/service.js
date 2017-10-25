@@ -67,7 +67,67 @@ var Service = (function () {
             });
         });
     };
+    Service.prototype.getCombinedArticles = function (category) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            query.where().isin('Category', [category[0].value, category[1].value]);
+            query.take(20);
+            var everlive = _this.createEverlive();
+            everlive.data(ARTICLES).get(query).then(function (data) {
+                resolve(data.result);
+            }, function (error) {
+                Service.showErrorAndReject(error, reject);
+            });
+        });
+    };
     Service.prototype.getArticlesByCategory = function (category) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            query.where().isin('Category', ['BUSINESS', 'POLITICS']);
+            query.take(20);
+            var everlive = _this.createEverlive();
+            everlive.data(ARTICLES).get(query).then(function (data) {
+                resolve(data.result);
+            }, function (error) {
+                Service.showErrorAndReject(error, reject);
+            });
+        });
+    };
+    Service.prototype.getArticlesByCategory2 = function (category) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            query.where().isin('Category', ['BREXIT', 'BRICS']);
+            query.take(20);
+            var everlive = _this.createEverlive();
+            everlive.data(ARTICLES).get(query).then(function (data) {
+                resolve(data.result);
+            }, function (error) {
+                Service.showErrorAndReject(error, reject);
+            });
+        });
+    };
+    Service.prototype.getArticlesByCategory4 = function (category) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            query.where().isin('Category', ['DIGITAL', 'INNOVATION']);
+            query.take(20);
+            var everlive = _this.createEverlive();
+            everlive.data(ARTICLES).get(query).then(function (data) {
+                resolve(data.result);
+            }, function (error) {
+                Service.showErrorAndReject(error, reject);
+            });
+        });
+    };
+    Service.prototype.getArticlesByCategory3 = function (category) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var query = new everliveModule.Query();

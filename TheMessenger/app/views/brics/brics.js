@@ -3,7 +3,7 @@ var viewArticlesViewModel = require("../../view-models/brics-view-model");
 var viewModel;
 function pageLoaded(args) {
     var page = args.object;
-    viewModel = new viewArticlesViewModel.ArticleListViewModel("INNOVATION");
+    viewModel = new viewArticlesViewModel.ArticleListViewModel("BRICS");
     page.bindingContext = viewModel;
     viewModel.refresh();
 }
@@ -12,7 +12,7 @@ function navigatingTo(args) {
     var page = args.object;
     viewModel = page.navigationContext;
     if (viewModel == null) {
-        viewModel = new viewArticlesViewModel.ArticleListViewModel("INNOVATION");
+        viewModel = new viewArticlesViewModel.ArticleListViewModel("BRICS");
     }
     page.bindingContext = null;
     page.bindingContext = viewModel;

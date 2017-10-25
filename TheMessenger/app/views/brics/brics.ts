@@ -7,7 +7,7 @@ var viewModel: viewArticlesViewModel.ArticleListViewModel;
 export function pageLoaded(args) {
     var page = args.object;
 
-    viewModel = new viewArticlesViewModel.ArticleListViewModel("INNOVATION");
+    viewModel = new viewArticlesViewModel.ArticleListViewModel("BRICS");
 
     page.bindingContext = viewModel;
     viewModel.refresh(); 
@@ -19,7 +19,7 @@ export function navigatingTo(args) {
 
     if(viewModel == null)
     {   
-        viewModel = new viewArticlesViewModel.ArticleListViewModel("INNOVATION");
+        viewModel = new viewArticlesViewModel.ArticleListViewModel("BRICS");
     }
     
     page.bindingContext = null;

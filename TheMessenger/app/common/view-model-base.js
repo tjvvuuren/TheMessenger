@@ -141,25 +141,29 @@ var ViewModelBase = (function (_super) {
         //console.log("navigatingToHome");
         navigator.navigatingToDigitalEconomy();
     };
-    ViewModelBase.prototype.navigateToWater = function (args) {
-        //console.log("navigatingToHome");
-        navigator.navigatingToWater();
-    };
     ViewModelBase.prototype.navigateToImpact = function (args) {
         //console.log("navigatingToHome");
         navigator.navigatingToImpact();
+    };
+    ViewModelBase.prototype.navigateToWater = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToWater();
     };
     ViewModelBase.prototype.navigateToClub = function (args) {
         //console.log("navigatingToHome");
         navigator.navigatingToClub();
     };
-     ViewModelBase.prototype.navigateToBusiness = function (args) {
+    ViewModelBase.prototype.navigateToBusiness = function (args) {
         //console.log("navigatingToHome");
         navigator.navigatingToBusiness();
     };
-     ViewModelBase.prototype.navigateToTest = function (args) {
+    ViewModelBase.prototype.navigateToTest = function (args) {
         //console.log("navigatingToHome");
         navigator.navigatingToTest();
+    };
+    ViewModelBase.prototype.navigateToAbout = function (args) {
+        //console.log("navigatingToHome");
+        navigator.navigatingToAbout();
     };
     return ViewModelBase;
 }(observableModule.Observable));

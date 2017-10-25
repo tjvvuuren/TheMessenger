@@ -8,7 +8,7 @@
     actionBarHidden="false">
     
     <Page.actionBar>
-        <ActionBar title="{{ PageTitle }}" class="action-bar">
+        <ActionBar title="Survey Summary" class="action-bar">
             <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
         </ActionBar>
     </Page.actionBar>

@@ -22,7 +22,7 @@ application_1.on(application_1.launchEvent, function (args) {
     Analytics.init({ appId: '9fi6b79u9cyuqehq' });
     Analytics.start();
 });
-app.start({ moduleName: 'main-page' });
+app.start({ moduleName: 'views/business/business-list-page' });
 //document.addEventListener("deviceready", function() {
 //var everlive = new Everlive({
 //appId: "9fi6b79u9cyuqehq",

@@ -25,7 +25,7 @@ applicationOn(launchEvent, function (args: ApplicationEventData) {
 });
 
 
-app.start({ moduleName: 'main-page' });
+app.start({ moduleName: 'views/business/business-list-page' });
 
 //document.addEventListener("deviceready", function() {
     //var everlive = new Everlive({

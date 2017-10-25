@@ -1,0 +1,91 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+    loaded="pageLoaded" 
+    xmlns:lv="nativescript-telerik-ui/listview"
+    xmlns:nsDrawer="nativescript-telerik-ui/sidedrawer"
+    xmlns:shared="shared"
+    backgroundSpanUnderStatusBar="true"
+    actionBarHidden="false">
+    
+       <Page.actionBar>
+        <ActionBar  class="action-bar">
+        <android>
+                <NavigationButton android.systemIcon="ic_menu_moreoverflow" tap="{{ toggleDrawerState }}" />
+            </android>
+            <ios>
+                <NavigationButton visibility="collapsed"/>
+                <ActionItem icon="res://ic_menu" ios.position="left" tap="{{ toggleDrawerState }}" />
+            </ios>
+        <Image src="~/images/messenger_splash.png" width="100" height="40" />
+        </ActionBar>
+    </Page.actionBar>
+    
+              
+         <nsDrawer:RadSideDrawer id="sideDrawer">
+        <nsDrawer:RadSideDrawer.drawerContent>
+            <shared:draw />
+        </nsDrawer:RadSideDrawer.drawerContent>
+
+        <nsDrawer:RadSideDrawer.mainContent>
+
+            <GridLayout rows="auto,*,auto" backgroundColor="white">
+            
+<ScrollView orientation="horizontal" style=" flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row' " >
+                <GridLayout row="0" columns="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" class="blue-background ">
+                   <!-- <StackLayout orientation="vertical" class="{{ Mode == 'NOTIFICATION' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Notifications" tap="{{ navigateToNotifications }}" class="{{ Mode == 'NOTIFICATION' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'NOTIFICATION' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>-->
+                    
+                    <StackLayout   orientation="vertical" class="{{ Mode == 'BUSINESS' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Business & Politics" tap="{{ navigateToBusiness }}" class="{{ Mode == 'BUSINESS' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'BUSINESS' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>                        
+                    </StackLayout>
+                    <StackLayout col="1" orientation="vertical" class="{{ Mode == 'CLUB' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Business Club" tap="{{ navigateToClub }}" class="{{ Mode == 'CLUB' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'CLUB' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>                                                         
+                    <StackLayout col="2" orientation="vertical" class="{{ Mode == 'BRICS' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Brexit, Brics" tap="{{ navigateToBrics }}" class="{{ Mode == 'BRICS' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'BRICS' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="3" orientation="vertical" class="{{ Mode == 'WATER' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Built Economy" tap="{{ navigateToWater }}" class="{{ Mode == 'WATER' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'WATER' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="4" orientation="vertical" class="{{ Mode == 'INNOVATION' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button text="Digital Economy" tap="{{ navigateToDigitalEconomy }}" class="{{ Mode == 'INNOVATION' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'INNOVATION' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout> 
+
+                   <StackLayout col="5" orientation="vertical" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Impact Investing" tap="{{ navigateToTest }}" class="{{ Mode == 'IMPACT' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'IMPACT' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>                       
+                    
+                     <StackLayout col="6" orientation="vertical" class="{{ Mode == 'LIFESTYLE' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Lifestyle" tap="{{ navigateToLifestyle }}" class="{{ Mode == 'LIFESTYLE' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'LIFESTYLE' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                    <StackLayout col="7" orientation="vertical" class="{{ Mode == 'ABOUT' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="About Us" tap="{{ navigateToAbout }}" class="{{ Mode == 'ABOUT' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'ABOUT' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>
+                   
+                    <!--<StackLayout col="8" orientation="vertical" class="{{ Mode == 'COMMUNITY' ? 'modeSelectedButtonStackPanelStyle' : 'modeButtonStyleStackPanelStyle' }}">
+                        <Button  text="Community" tap="{{ navigatingToVoicesMain }}" class="{{ Mode == 'COMMUNITY' ? 'modeSelectedButtonStyle' : 'modeButtonStyle' }}"/>
+                        <GridLayout class="{{ Mode === 'COMMUNITY' ? 'selectedBarItemBottomBorder' : 'barItemBottomBorder'}}"/>
+                    </StackLayout>-->
+                    
+                </GridLayout>
+              
+        </ScrollView> 
+ 
+        <ScrollView row="1">
+<Image  src="~/images/Coming-Soon_BC.jpg" width="100%" height="100%" top="0" />     
+        </ScrollView>
+        </GridLayout> 
+   
+     </nsDrawer:RadSideDrawer.mainContent>
+    </nsDrawer:RadSideDrawer>
+    
+</Page>

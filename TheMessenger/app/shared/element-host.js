@@ -41,6 +41,36 @@ exports.navigatingToHealth = function () {
         });
     }
 };
+exports.navigatingToParticipate = function () {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/participate/participate") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/participate/participate",
+            context: null
+        });
+    }
+};
+exports.navigatingToDailyPoll = function () {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/dailyPoll/dailyPoll") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/dailyPoll/dailyPoll",
+            context: null
+        });
+    }
+};
+exports.navigatingToSurveys = function () {
+    var topmost = frame.topmost();
+    if (topmost.currentEntry.moduleName !== "views/surveys/surveys") {
+        frame.topmost().navigate({
+            animated: true,
+            moduleName: "views/surveys/surveys",
+            context: null
+        });
+    }
+};
 exports.navigatingToFoodAndWine = function () {
     var topmost = frame.topmost();
     if (topmost.currentEntry.moduleName !== "views/foodandwine/foodandwine-page") {
@@ -430,6 +460,9 @@ var ElementHost = (function (_super) {
             case "Voices":
                 this.setVoicesButtons();
                 break;
+            case "Survey":
+                this.setSurveyButtons();
+                break;
             case "Opportunities":
                 this.setOpportunitiesButtons();
                 break;
@@ -488,15 +521,17 @@ var ElementHost = (function (_super) {
         this._Fashion = true;
         this._Health = true;
         this._Music = true;
-        this._Partnering = true;
         this._Sport = true;
         this._Travel = true;
     };
     ElementHost.prototype.setVoicesButtons = function () {
+        this._DailyPoll = true;
         this._Newsletters = true;
-        this._SocialMedia = true;
-        this._TV = true;
         this._Surveys = true;
+    };
+    ElementHost.prototype.setSurveyButtons = function () {
+        this._Participate = true;
+        this._DailyPoll = true;
     };
     ElementHost.prototype.setOpportunitiesButtons = function () {
         this._Deals = true;
@@ -781,6 +816,30 @@ var ElementHost = (function (_super) {
     Object.defineProperty(ElementHost.prototype, "Surveys", {
         get: function () {
             if (this._Surveys) {
+                return "visible";
+            }
+            else {
+                return "collapsed";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ElementHost.prototype, "DailyPoll", {
+        get: function () {
+            if (this._DailyPoll) {
+                return "visible";
+            }
+            else {
+                return "collapsed";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ElementHost.prototype, "Participate", {
+        get: function () {
+            if (this._Participate) {
                 return "visible";
             }
             else {

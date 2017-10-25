@@ -86,6 +86,11 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
         this._Mode = "BRICS";
         this.getArticlesForCategory("BRICS");
     }
+    onTap_BrexitMode(args)
+    {
+        this._Mode = "BREXIT";
+        this.getArticlesForCategory("BREXIT");
+    }
     onItemTap(args){
         var index = args.index;
         //console.log(index);
@@ -97,10 +102,26 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
             context: this.Article
         });
     }
-
+    getCombinedArticles() {
+        var categories = [{ value: "BRICS" },{ value: "BREXIT" } ];
+        
+        if (!this.beginLoading())return;
+            serviceModule.service.getCombinedArticles(categories).then((data: any[]) => {
+                var articles = new Array<ArticleItemData>();
+                for (var i = 0; i < data.length; i++) {
+                    //console.log(data[i].Title);
+                    articles.push(new ArticleItemData(i, data[i].Title, data[i].Description, data[i].ArticleContent,  data[i].PostDate, data[i].Category, data[i].Creator, data[i].MediaUrl));
+                }
+                this.Mode = this._Mode;
+                this.Articles = articles;
+                this.endLoading();
+            },(error: any) => {
+                this.endLoading();
+            });
+    }
     getArticlesForCategory(category: string) {
         if (!this.beginLoading())return;
-            serviceModule.service.getArticlesByCategory(category).then((data: any[]) => {
+            serviceModule.service.getArticlesByCategory2(category).then((data: any[]) => {
                 var articles = new Array<ArticleItemData>();
                 for (var i = 0; i < data.length; i++) {
                     //console.log(data[i].Title);

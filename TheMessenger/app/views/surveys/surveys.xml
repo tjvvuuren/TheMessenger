@@ -17,9 +17,6 @@
             <shared:drawer />
         </nsDrawer:RadSideDrawer.drawerContent>
 
-        <nsDrawer:RadSideDrawer.mainContent>
-                <shared:element-host />
-            
-        </nsDrawer:RadSideDrawer.mainContent>
+      
     </nsDrawer:RadSideDrawer>
 </Page>

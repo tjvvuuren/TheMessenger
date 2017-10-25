@@ -6,7 +6,7 @@
     navigatedTo="pageNavigatedTo">
 
     <Page.actionBar>
-        <ActionBar title="Article Detail" class="action-bar">
+        <ActionBar title="Article Detail" class="{{ ActionbarCss }}">
             <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
         </ActionBar>
     </Page.actionBar>

@@ -22,4 +22,4 @@ function navigatingTo(args) {
     viewModel.refresh();
 }
 exports.navigatingTo = navigatingTo;
-//# sourceMappingURL=innovation-list-page.js.map
+//# sourceMappingURL=digitalEconomy-list-page.js.map

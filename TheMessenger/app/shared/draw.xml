@@ -1,0 +1,21 @@
+<DockLayout stretchLastChild="true" class="sidedrawer-dockLayout">
+<StackLayout>
+  <StackLayout class="sidedrawer-header">
+    <Image src="~/images/menu_logo.png" width="63" height="53"  />
+  </StackLayout>
+  <StackLayout class="sidedrawer-content">
+    <!--<Button text="Notifications" tap="{{navigateToNotifications}}"  class="sidedrawer-list-item-text" />-->
+    <Button text="Business, Politics" tap="{{ navigateToBusiness }}" class="sidedrawer-list-item-text" />
+    <Button text="Brexit, Brics" tap="{{navigateToBrics}}" class="sidedrawer-list-item-text" /> 
+    <Button text="Built Economy" tap="{{navigateToWater}}" class="sidedrawer-list-item-text" /> 
+    <Button text="Digital Economy" tap="{{navigateToDigitalEconomy}}" class="sidedrawer-list-item-text" />
+    <Button text="Impact Investing" tap="{{navigateToTest}}" class="sidedrawer-list-item-text" /> 
+    <Button text="Business Club" tap="{{navigateToClub}}" class="sidedrawer-list-item-text" />
+    <Button text="Lifestyle" tap="{{navigateToLifestyle}}" class="sidedrawer-list-item-text" />
+   <!-- <Button text="Community" tap="{{navigatingToVoicesMain}}" class="sidedrawer-list-item-text" />-->
+    <Button text="About Us" tap="{{navigateToAbout}}" class="sidedrawer-list-item-text" />
+    <!--<Button text="Contact Centre" tap="{{navigateToContactCentre}}" class="sidedrawer-list-item-text" />-->
+    
+  </StackLayout>
+</StackLayout>
+</DockLayout>

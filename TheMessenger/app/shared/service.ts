@@ -73,7 +73,66 @@ export class Service {
         });
     }
 
+    getCombinedArticles(category: any[]): Promise<any[]> {
+        return new Promise<any[]>((resolve, reject) => {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            query.where().isin('Category', [category[0].value, category[1].value]);
+            query.take(20)
+            var everlive = this.createEverlive();
+            everlive.data(ARTICLES).get(query).then(data => {
+                resolve(<any[]>data.result);
+            }, error => {
+                    Service.showErrorAndReject(error, reject);
+                })
+        });
+    }
+
     getArticlesByCategory(category: string): Promise<any[]> {
+        return new Promise<any[]>((resolve, reject) => {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            query.where().isin('Category', ['BUSINESS', 'POLITICS']);
+            query.take(20)
+            var everlive = this.createEverlive();
+            everlive.data(ARTICLES).get(query).then(data => {
+                resolve(<any[]>data.result);
+            }, error => {
+                    Service.showErrorAndReject(error, reject);
+                })
+        });
+    }
+
+     getArticlesByCategory2(category: string): Promise<any[]> {
+        return new Promise<any[]>((resolve, reject) => {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            query.where().isin('Category', ['BREXIT', 'BRICS']);
+            query.take(20)
+            var everlive = this.createEverlive();
+            everlive.data(ARTICLES).get(query).then(data => {
+                resolve(<any[]>data.result);
+            }, error => {
+                    Service.showErrorAndReject(error, reject);
+                })
+        });
+    }
+     getArticlesByCategory4(category: string): Promise<any[]> {
+        return new Promise<any[]>((resolve, reject) => {
+            var query = new everliveModule.Query();
+            query.orderDesc("PostDate");
+            query.where().isin('Category', ['DIGITAL', 'INNOVATION']);
+            query.take(20)
+            var everlive = this.createEverlive();
+            everlive.data(ARTICLES).get(query).then(data => {
+                resolve(<any[]>data.result);
+            }, error => {
+                    Service.showErrorAndReject(error, reject);
+                })
+        });
+    }
+
+  getArticlesByCategory3(category: string): Promise<any[]> {
         return new Promise<any[]>((resolve, reject) => {
             var query = new everliveModule.Query();
             query.orderDesc("PostDate");
@@ -87,7 +146,6 @@ export class Service {
                 })
         });
     }
-
     getCategoriesByArea(area: string): Promise<any[]> {
         return new Promise<any[]>((resolve, reject) => {
             var query = new everliveModule.Query();

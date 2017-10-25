@@ -4,7 +4,14 @@
     animation-name: articlesContentAnimation;
     animation-duration: 2;
 }
-
+.imgList {
+    width:70px;
+    height:70px;
+    margin-left: 10;
+    margin-top: 10;
+    margin-right: 10;
+    padding: 2;
+}
 @keyframes articlesContentAnimation {
     from { transform: translate(0, -700); }
     to { transform: translate(0, 0); }
@@ -21,21 +28,22 @@
     font-size: 15;
     color: white;
     padding: 10;
-    background-color: #30BCFF;
+    
 }
 
 .modeButtonStyle{
-    color: #677881;
+    color: #ffffff;
     font-size: 15;
     horizontal-align: center;
     vertical-align: center;
     padding: 10;
     border:0;
-    background-color: #fafeff;
+    background-color: #0087bf;
 }
 
 .modeSelectedButtonStackPanelStyle {
-    background-color: #30BCFF;
+    background-color:#0087bf;
+    
 }
 .modeButtonStyleStackPanelStyle {
     background-color: #fafeff;
@@ -54,8 +62,9 @@
     margin-left: 10;
     border-bottom: 1 solid lightgray;
 }
-.imgList {
+.imgList2 {
     width:70px;
+    height:20px;
     padding: 2;
 }
 .dateStyle {

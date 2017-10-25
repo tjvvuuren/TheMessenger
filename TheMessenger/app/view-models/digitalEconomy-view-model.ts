@@ -46,7 +46,7 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
         super();
         this._Mode = mode;
         this._innovationArticles = new Array<ArticleItemData>();
-        this.getArticlesForCategory("INNOVATION");
+        this.getArticlesForCategory("DIGITAL");
         
          
     }
@@ -102,10 +102,10 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
         this._Mode = "WATER";
         this.getArticlesForCategory("WATER");
     }
-    onTap_BricsMode(args)
+    onTap_DigitalMode(args)
     {
-        this._Mode = "BRICS";
-        this.getArticlesForCategory("BRICS");
+        this._Mode = "DIGITAL";
+        this.getArticlesForCategory("DIGITAL");
     }
     onItemTap(args){
         var index = args.index;
@@ -121,7 +121,7 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
 
     getArticlesForCategory(category: string) {
         if (!this.beginLoading())return;
-            serviceModule.service.getArticlesByCategory(category).then((data: any[]) => {
+            serviceModule.service.getArticlesByCategory4(category).then((data: any[]) => {
                 var articles = new Array<ArticleItemData>();
                 for (var i = 0; i < data.length; i++) {
                     //console.log(data[i].Title);

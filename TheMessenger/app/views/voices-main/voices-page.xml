@@ -8,25 +8,37 @@
     actionBarHidden="false">
     
     <Page.actionBar>
-        <ActionBar title="{{ PageTitle }}" class="action-bar">
-            <android>
+        <ActionBar  class="action-bar">
+        <android>
                 <NavigationButton android.systemIcon="ic_menu_moreoverflow" tap="{{ toggleDrawerState }}" />
             </android>
             <ios>
                 <NavigationButton visibility="collapsed"/>
                 <ActionItem icon="res://ic_menu" ios.position="left" tap="{{ toggleDrawerState }}" />
             </ios>
+        <Image src="~/images/messenger_splash.png" width="100" height="40" />
         </ActionBar>
     </Page.actionBar>
 
-    <nsDrawer:RadSideDrawer id="sideDrawer">
+    
+            <GridLayout rows="auto,*,auto" backgroundColor="white">        
+<shared:drawer /> 
+        <ScrollView row="1">
+<nsDrawer:RadSideDrawer id="sideDrawer">
         <nsDrawer:RadSideDrawer.drawerContent>
-            <shared:drawer />
+            <shared:draw />
         </nsDrawer:RadSideDrawer.drawerContent>
 
         <nsDrawer:RadSideDrawer.mainContent>
                 <shared:element-host />
             
         </nsDrawer:RadSideDrawer.mainContent>
-    </nsDrawer:RadSideDrawer>
+    </nsDrawer:RadSideDrawer>       
+        </ScrollView>
+        </GridLayout> 
+   
+
+   
+     
+     
 </Page>

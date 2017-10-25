@@ -46,7 +46,38 @@ exports.navigatingToHealth= function() {
             });
         }
     }
-    
+
+    exports.navigatingToParticipate= function() {
+        var topmost = frame.topmost();
+        if (topmost.currentEntry.moduleName !== "views/participate/participate") {
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/participate/participate",
+                context: null
+            });
+        }
+    }
+
+   exports.navigatingToDailyPoll= function() {
+        var topmost = frame.topmost();
+        if (topmost.currentEntry.moduleName !== "views/dailyPoll/dailyPoll") {
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/dailyPoll/dailyPoll",
+                context: null
+            });
+        }
+    } 
+    exports.navigatingToSurveys= function() {
+        var topmost = frame.topmost();
+        if (topmost.currentEntry.moduleName !== "views/surveys/surveys") {
+            frame.topmost().navigate({
+                animated: true,
+                moduleName: "views/surveys/surveys",
+                context: null
+            });
+        }
+    }    
 exports.navigatingToFoodAndWine= function() {
         var topmost = frame.topmost();
         if (topmost.currentEntry.moduleName !== "views/foodandwine/foodandwine-page") {
@@ -491,10 +522,13 @@ export class ElementHost extends viewModelBaseModule.ViewModelBase
     private _Sport: boolean;
     private _Travel: boolean;
 
+    private _DailyPoll: boolean;
     private _Newsletters: boolean;
-    private _SocialMedia: boolean;
-    private _TV: boolean;
     private _Surveys: boolean;
+
+    private _Participate: boolean;
+    private _SocialMedia: boolean;
+    private _TV: boolean;    
 
     private _Deals: boolean;
     private _Tenders: boolean;
@@ -548,6 +582,9 @@ export class ElementHost extends viewModelBaseModule.ViewModelBase
                 break;
             case "Voices":
                 this.setVoicesButtons();
+                break;
+            case "Survey":
+                this.setSurveyButtons();
                 break;
             case "Opportunities":
                 this.setOpportunitiesButtons();
@@ -610,7 +647,6 @@ export class ElementHost extends viewModelBaseModule.ViewModelBase
         this._Fashion = true;
         this._Health = true;
         this._Music = true;
-        this._Partnering = true;
         this._Sport = true;
         this._Travel = true;
     }
@@ -618,10 +654,14 @@ export class ElementHost extends viewModelBaseModule.ViewModelBase
     
     private setVoicesButtons()
     {
+        this._DailyPoll = true;
         this._Newsletters = true;
-        this._SocialMedia = true;
-        this._TV = true;
         this._Surveys = true;
+    }
+      private setSurveyButtons()
+    {
+        this._Participate = true;
+        this._DailyPoll = true;
     }
     private setOpportunitiesButtons()
     {
@@ -883,7 +923,24 @@ this._Insure = true;
         }
     }
 
-
+  get DailyPoll(): string {
+        if(this._DailyPoll)
+        {
+            return "visible";
+        }else
+        {
+            return "collapsed";
+        }
+    }
+    get Participate(): string {
+        if(this._Participate)
+        {
+            return "visible";
+        }else
+        {
+            return "collapsed";
+        }
+    }
 
     get Deals(): string {
         if(this._Deals)

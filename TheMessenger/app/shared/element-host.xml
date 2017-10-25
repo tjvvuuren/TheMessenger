@@ -1,7 +1,56 @@
 
 <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="top">
     <WrapLayout padding="5">
-            
+
+         <Button class="font-icon-btn" visibility="{{ Arts }}" textWrap="true" tap="navigatingToArt">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf1fc;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Arts"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button> 
+            <Button class="font-icon-btn" visibility="{{ BookReviews }}" textWrap="true" tap="navigatingToBookReviews">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf02d;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Book Reviews"  class="img-button-text" fontSize="12" textWrap="false"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+             <Button class="font-icon-btn" visibility="{{ Education }}" textWrap="true" tap="navigatingToEducation">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf19d;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Education"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+
+        <Button class="font-icon-btn" visibility="{{ Fashion }}" textWrap="true" tap="navigatingToFashion">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf29d;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Fashion"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button> 
             <Button class="font-icon-btn" visibility="{{ FoodandWine }}" textWrap="true" tap="navigatingToFoodAndWine">
                 <Button.formattedText>
                     <FormattedString>
@@ -14,6 +63,43 @@
                     </FormattedString>
                 </Button.formattedText>
             </Button>
+            <Button class="font-icon-btn" visibility="{{ Health }}" textWrap="true" tap="navigatingToHealth">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf004;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Health"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>
+
+        <Button class="font-icon-btn font-icon-btn-motoring" visibility="{{ Motoring }}" textWrap="true" tap="navigatingToMotoring">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf1b9;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Motoring"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button> 
+     <Button class="font-icon-btn" visibility="{{ Music }}" textWrap="true" tap="navigatingToMusic">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf025;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Music"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>          
             <Button class="font-icon-btn font-icon-btn-property" visibility="{{ Property }}" textWrap="true" tap="navigatingToProperty">
                 <Button.formattedText>
                     <FormattedString>
@@ -26,90 +112,7 @@
                     </FormattedString>
                 </Button.formattedText>
             </Button>
-             <Button class="font-icon-btn font-icon-btn-motoring" visibility="{{ Motoring }}" textWrap="true" tap="navigatingToMotoring">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf1b9;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="Motoring"  class="img-button-text" fontSize="12"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
-            </Button> 
-          <Button class="font-icon-btn" visibility="{{ Arts }}" textWrap="true" tap="navigatingToArt">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf1fc;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="Arts"  class="img-button-text" fontSize="12"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
-            </Button> 
-          <Button class="font-icon-btn" visibility="{{ BookReviews }}" textWrap="true" tap="navigatingToBookReviews">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf02d;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="Book Reviews"  class="img-button-text" fontSize="12" textWrap="false"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
-            </Button> 
-          <Button class="font-icon-btn" visibility="{{ Education }}" textWrap="true" tap="navigatingToEducation">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf19d;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="Education"  class="img-button-text" fontSize="12"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
-            </Button> 
-          <Button class="font-icon-btn" visibility="{{ Fashion }}" textWrap="true" tap="navigatingToFashion">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf29d;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="Fashion"  class="img-button-text" fontSize="12"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
-            </Button> 
-          <Button class="font-icon-btn" visibility="{{ Health }}" textWrap="true" tap="navigatingToHealth">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf004;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="Health"  class="img-button-text" fontSize="12"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
-            </Button> 
-          <Button class="font-icon-btn" visibility="{{ Music }}" textWrap="true" tap="navigatingToMusic">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf025;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="Music"  class="img-button-text" fontSize="12"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
-            </Button> 
+                        
           <Button class="font-icon-btn" visibility="{{ Partnering }}" textWrap="true" tap="navigatingToPartnering">
                 <Button.formattedText>
                     <FormattedString>
@@ -147,6 +150,18 @@
                 </Button.formattedText>
             </Button>  
 
+            <Button class="font-icon-btn" visibility="{{ DailyPoll }}" textWrap="true" tap="navigatingToDailyPoll">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf274;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Daily Poll"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button> 
             <Button class="font-icon-btn" visibility="{{ Newsletters }}" textWrap="true">
                 <Button.formattedText>
                     <FormattedString>
@@ -158,32 +173,8 @@
                     </FormattedString.spans>
                     </FormattedString>
                 </Button.formattedText>
-            </Button>
-            <Button class="font-icon-btn" visibility="{{ SocialMedia }}" textWrap="true">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf1d7;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="Social Media"  class="img-button-text" fontSize="12" textWrap="false"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
-            </Button>
-             <Button class="font-icon-btn" visibility="{{ TV }}" textWrap="true">
-                <Button.formattedText>
-                    <FormattedString>
-                    <FormattedString.spans>
-                        <Span text="&#xf26c;" fontFamily="FontAwesome" fontSize="40" />
-                        <Span text="&#x0a;" fontSize="20" />
-                        <Span text="&#x0a;" fontSize="10" />
-                        <Span text="TV"  class="img-button-text" fontSize="12"/>
-                    </FormattedString.spans>
-                    </FormattedString>
-                </Button.formattedText>
             </Button> 
-          <Button class="font-icon-btn" visibility="{{ Surveys }}" textWrap="true">
+          <Button class="font-icon-btn" visibility="{{ Surveys }}" textWrap="true" tap="navigatingToSurveys">
                 <Button.formattedText>
                     <FormattedString>
                     <FormattedString.spans>
@@ -195,8 +186,8 @@
                     </FormattedString>
                 </Button.formattedText>
             </Button> 
-            
-            
+
+          
             <Button class="font-icon-btn" visibility="{{ Deals }}" textWrap="true">
                 <Button.formattedText>
                     <FormattedString>
@@ -404,6 +395,20 @@
                 </Button.formattedText>
             </Button>
 
+             
+        <Button class="font-icon-btn" visibility="{{ Participate }}" textWrap="true" tap="navigatingToParticipate">
+                <Button.formattedText>
+                    <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="&#xf0f6;" fontFamily="FontAwesome" fontSize="40" />
+                        <Span text="&#x0a;" fontSize="20" />
+                        <Span text="&#x0a;" fontSize="10" />
+                        <Span text="Summary"  class="img-button-text" fontSize="12"/>
+                    </FormattedString.spans>
+                    </FormattedString>
+                </Button.formattedText>
+            </Button>            
+           
 
     </WrapLayout>
 </StackLayout>

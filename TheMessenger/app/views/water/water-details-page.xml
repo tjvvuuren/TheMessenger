@@ -1,12 +1,12 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd"
     xmlns:shared="shared"
     actionBarHidden="false"
-    cssFile="~/views/water/water-details-page.css"
+     cssFile="~/views/water/water-details-page.css"
     loaded="pageLoaded"
     navigatedTo="pageNavigatedTo">
 
     <Page.actionBar>
-        <ActionBar title="Article Detail" class="action-bar">
+        <ActionBar title="Article Detail" class="actionAll">
             <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"  tap="onNavBtnTap"></NavigationButton>
         </ActionBar>
     </Page.actionBar>

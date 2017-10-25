@@ -108,6 +108,24 @@ var ArticleListViewModel = (function (_super) {
             context: this.Article
         });
     };
+    ArticleListViewModel.prototype.getCombinedArticles = function () {
+        var _this = this;
+        var categories = [{ value: "BUSINESS" }, { value: "POLITICS" }];
+        if (!this.beginLoading())
+            return;
+        serviceModule.service.getCombinedArticles(categories).then(function (data) {
+            var articles = new Array();
+            for (var i = 0; i < data.length; i++) {
+                //console.log(data[i].Title);
+                articles.push(new ArticleItemData(i, data[i].Title, data[i].Description, data[i].ArticleContent, data[i].PostDate, data[i].Category, data[i].Creator, data[i].MediaUrl));
+            }
+            _this.Mode = _this._Mode;
+            _this.Articles = articles;
+            _this.endLoading();
+        }, function (error) {
+            _this.endLoading();
+        });
+    };
     ArticleListViewModel.prototype.getArticlesForCategory = function (category) {
         var _this = this;
         if (!this.beginLoading())

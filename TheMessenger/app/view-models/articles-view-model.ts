@@ -47,10 +47,8 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
         this._Mode = mode;
         this._businessArticles = new Array<ArticleItemData>();
         this.getArticlesForCategory("BUSINESS");
-        
-         
     }
-
+     
     get Mode(): string
     {
         return this._Mode;
@@ -117,6 +115,24 @@ export class ArticleListViewModel extends viewModelBaseModule.ViewModelBase {
             animated: true,
             context: this.Article
         });
+    }
+
+    getCombinedArticles() {
+        var categories = [{ value: "BUSINESS" },{ value: "POLITICS" } ];
+        
+        if (!this.beginLoading())return;
+            serviceModule.service.getCombinedArticles(categories).then((data: any[]) => {
+                var articles = new Array<ArticleItemData>();
+                for (var i = 0; i < data.length; i++) {
+                    //console.log(data[i].Title);
+                    articles.push(new ArticleItemData(i, data[i].Title, data[i].Description, data[i].ArticleContent,  data[i].PostDate, data[i].Category, data[i].Creator, data[i].MediaUrl));
+                }
+                this.Mode = this._Mode;
+                this.Articles = articles;
+                this.endLoading();
+            },(error: any) => {
+                this.endLoading();
+            });
     }
 
     getArticlesForCategory(category: string) {
