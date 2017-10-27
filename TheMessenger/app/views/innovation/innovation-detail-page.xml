@@ -5,7 +5,7 @@
     xmlns:shared="shared"
     backgroundSpanUnderStatusBar="true"
     meta name="viewport" 
-    content="width=device-width 
+    content="width=device-width"
     initial-scale="1"
      maximum-scale="1"
     actionBarHidden="false">
