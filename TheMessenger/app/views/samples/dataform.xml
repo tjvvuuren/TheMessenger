@@ -1,5 +1,0 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd"
-    loaded="onPageLoaded"
-    xmlns:df="nativescript-telerik-ui-pro/dataform">
-    <df:RadDataForm id="myDataForm" source="{{ person }}" />
-</Page>
