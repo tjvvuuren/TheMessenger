@@ -1,0 +1,13 @@
+<Button visibility="{{ NavigationObject.fontButtonVisibility }}" class="font-icon-btn" textWrap="true" tap="buttonTap">
+  <Button.formattedText> 
+    <FormattedString>
+      <FormattedString.spans>
+        <Span text="{{ FontIconID }}" fontFamily="FontAwesome" fontSize="40" />
+        <Span text="&#x0a;" fontSize="20" />
+        <Span text="&#x0a;" fontSize="10" />
+        <Span text="{{ Title }}" class="img-button-text" fontSize="12" textWrap="false"/>
+      </FormattedString.spans>
+    </FormattedString>
+  </Button.formattedText>
+</Button>
+<!--<Image visibility="{{ NavigationObject.useImgButtons == 'true' ? 'visible' : 'collapsed' }}" src="{{ NavigationObject.imgButtonSrc }}" width="70" height="70" tap="onTap" />-->
