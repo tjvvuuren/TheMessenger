@@ -22,8 +22,9 @@
             <Image col="0" rowspan="3" class="imgDetail" src="{{ MediaUrl }}" />
             <Label row="1" col="1" class="detailDateTitle" textWrap="true" text="{{ PostDate | dateConverter('DD.MM.YYYY') }}" />
             <Label row="2" col="1" class="detailDateTitle" textWrap="true" text="{{ Creator }}" />  
-            <HtmlView row="3" colspan="2" html="{{ NewsContent }}" class="detailContent" textWrap="true" style ="img{display: inline; height: auto; max-width: 100%;}"/>    
-        </GridLayout>
+            <!--<HtmlView row="3" colspan="2" html="{{ NewsContent }}" class="detailContent" textWrap="true" style ="img{display: inline; height: auto; max-width: 100%;}"/>-->
+            <WebView row="3" colSpan="2" src="{{ NewsContent }}" class="detailContent" height="400" textWrap="true"/>
+      </GridLayout>
 
     </GridLayout>
 </ScrollView>
